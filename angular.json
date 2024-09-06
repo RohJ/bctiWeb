@@ -37,7 +37,8 @@
               "node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
             ],
             "scripts": [
-              "node_modules/@glidejs/glide/dist/glide.min.js"
+              "node_modules/@glidejs/glide/dist/glide.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -105,7 +106,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+          "buildTarget": "bctiWeb:build:production"
+          }
         }
       }
     }
