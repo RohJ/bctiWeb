@@ -30,9 +30,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
+              "node_modules/@glidejs/glide/dist/css/glide.core.min.css",
+              "node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@glidejs/glide/dist/glide.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -51,7 +57,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
+              "buildOptimizer": true,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
