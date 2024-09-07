@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.body-text {
+  font-family: "Inter", sans-serif !important;
+}
+
+.custom-class {
+  font-family: "Inter", sans-serif !important;
+}
+
+h1 {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  line-height: 54px !important;
+}
+
+h2 {
+  font-size: 36px !important;
+  font-weight: 500 !important;
+}
+
+h3 {
+  font-size: 24px !important;
+  line-height: 29px !important;
+  font-weight: 300 !important;
+}
+
+h4 {
+  font-size: 21px !important;
+  line-height: 25px !important;
+  font-weight: 800 !important;
+}
+
+h5 {
+  font-size: 18px !important;
+  line-height: 21px !important;
+  font-weight: 500 !important;
+}
+
+h6 {
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 18px !important;
+  line-height: 19px !important;
+  font-weight: 400 !important;
+}
+
 .page-header {
   // min-height: 85vh;
   // max-height: 999px;
@@ -23,6 +75,12 @@
 }
 .space {
   margin-bottom: 40px;
+}
+.testimony-background-quotes {
+  background-image: url(assets/img/landing/quotes.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 /* Importing Bootstrap SCSS file. */
