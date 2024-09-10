@@ -46,8 +46,9 @@ h6 {
 
 p {
   font-size: 18px !important;
-  line-height: 19px !important;
+  line-height: 23px !important;
   font-weight: 400 !important;
+  color: #454545;
 }
 
 .page-header {
@@ -75,6 +76,9 @@ p {
 }
 .space {
   margin-bottom: 40px;
+}
+.spacer {
+  margin-bottom: 20px;
 }
 .testimony-background-quotes {
   background-image: url(assets/img/landing/quotes.png);
