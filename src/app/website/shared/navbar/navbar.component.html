@@ -12,7 +12,7 @@
               </div>
               <div class="desktop_menu" [class.mobile_menu]="menuValue">
                   <ul>
-                      <li (click)="closeMenu()">About Us</li>
+                      <li [routerLink]="['/about']" (click)="closeMenu()">About Us</li>
                       <li (click)="closeMenu()">Counselling</li>
                       <li (click)="closeMenu()">Resources</li>
                       <li (click)="closeMenu()">Alumni</li>

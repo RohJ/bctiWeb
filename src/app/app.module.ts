@@ -8,13 +8,15 @@ import { NavbarComponent } from './website/shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './website/home/home.component';
 import { FooterComponent } from "./website/shared/footer/footer.component";
+import { AboutComponent } from './website/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
