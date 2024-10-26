@@ -14,7 +14,7 @@ var glide1 = new Glide('.Story', {
   styleUrl: './about.component.scss'
 })
 
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     glide1.mount();

@@ -38,7 +38,7 @@ var glide3 = new Glide('.Courses', {
 })
 
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
 
   contactForm: FormGroup = new FormGroup({
