@@ -11,6 +11,7 @@ import { FooterComponent } from "./website/shared/footer/footer.component";
 import { AboutComponent } from './website/about/about.component';
 import { CounselingComponent } from './website/counseling/counseling.component';
 import { CoursesComponent } from './website/courses/courses.component';
+import { CalendarComponent } from './website/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CoursesComponent } from './website/courses/courses.component';
     HomeComponent,
     AboutComponent,
     CounselingComponent,
-    CoursesComponent
+    CoursesComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
