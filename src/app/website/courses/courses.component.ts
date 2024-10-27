@@ -1,23 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import Glide from '@glidejs/glide';
-
-var glide4 = new Glide('.Story', {
-  type: 'carousel',
-  hoverpause: true,
-  autoplay: 4000,
-  perView: 1
-})
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrl: './courses.component.scss'
 })
-
-export class AboutComponent implements OnInit, OnDestroy {
+export class CoursesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
-    glide4.mount();
 
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('custom-class');

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import Glide from '@glidejs/glide';
 
-var glide4 = new Glide('.Story', {
+var glide5 = new Glide('.Coaching', {
   type: 'carousel',
   hoverpause: true,
   autoplay: 4000,
@@ -9,15 +9,14 @@ var glide4 = new Glide('.Story', {
 })
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  selector: 'app-counseling',
+  templateUrl: './counseling.component.html',
+  styleUrl: './counseling.component.scss'
 })
-
-export class AboutComponent implements OnInit, OnDestroy {
+export class CounselingComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
-    glide4.mount();
+    glide5.mount();
 
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('custom-class');

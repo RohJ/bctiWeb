@@ -13,7 +13,8 @@
               <div class="desktop_menu" [class.mobile_menu]="menuValue">
                   <ul>
                       <li [routerLink]="['/about']" (click)="closeMenu()">About Us</li>
-                      <li (click)="closeMenu()">Counselling</li>
+                      <li [routerLink]="['/counseling']" (click)="closeMenu()">Counselling</li>
+                      <li [routerLink]="['/courses']" (click)="closeMenu()">Courses</li>
                       <li (click)="closeMenu()">Resources</li>
                       <li (click)="closeMenu()">Alumni</li>
                       <li (click)="closeMenu()">Calendar</li>

@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './website/home/home.component';
 import { FooterComponent } from "./website/shared/footer/footer.component";
 import { AboutComponent } from './website/about/about.component';
+import { CounselingComponent } from './website/counseling/counseling.component';
+import { CoursesComponent } from './website/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AboutComponent } from './website/about/about.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    CounselingComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
