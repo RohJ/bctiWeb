@@ -1,0 +1,92 @@
+<div class="container-fluid" style="background-color: #FFFCF0;">
+  <div class="container">
+    <div class="row flex-sm-row-reverse" >
+      <!-- <h2 class="text-start space d-none d-sm-block d-md-none" style="color: #7F6A4F;">Our Mission</h2> -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-none">
+          <!-- <h5 class="card-header" style="background-color:#FFE5DD;">Offerings Form</h5> -->
+          <div class="card-body" >
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <div class="form-group  mt-3">
+                <label>Full Name</label>
+                <input type="text" formControlName="fullname" class="form-control mt-3" [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"/>
+                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                  <div *ngIf="f['fullname'].errors['required']">Name is required</div>
+              </div>
+              </div>
+
+              <div class="form-group  mt-3">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
+                @if (submitted && f['email'].errors) {
+                <div class="invalid-feedback">
+                  @if (f['email'].errors['required']) {
+                  <div>Email is required</div>
+                  }
+              @if (f['email'].errors['email']) {
+                  <div>Email is invalid</div>
+                  }
+                </div>
+                }
+              </div>
+
+              <div class="form-group  mt-3">
+                <label>Mobile Number</label>
+                <input type="number" formControlName="phone" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }"/>
+                @if (submitted && f['phone'].errors) {
+                <div class="invalid-feedback">
+                  @if (f['phone'].errors['required']) {
+                  <div>Mobile number is required</div>
+                  }
+              @if (f['phone'].errors['phone']) {
+                  <div>Mobile number is invalid</div>
+                  }
+                </div>
+                }
+              </div>
+
+              <div class="form-group  mt-3">
+                <label>Message</label>
+                <input type="text" formControlName="message" class="form-control  mt-3" style="height: 80px;" [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"/>
+                @if (submitted && f['message'].errors) {
+                <div class="invalid-feedback">
+                  @if (f['message'].errors['required']) {
+                  <div>Fullname is required</div>
+                  }
+                </div>
+                }
+              </div>
+
+
+              <div class="form-group my-3">
+                <!-- <button type="submit" class="btn btn-dark">Submit</button> -->
+                <button type="button" class="btn btn-secondary text-white mt-3" style="background-color: #6CAB72; font-size: medium; width: 200px;">Submit</button>
+                <!-- <button type="button" class="btn btn-dark" (click)="onReset()" class="btn btn-warning float-right">Reset</button> -->
+                <button type="button" class="btn btn-dark text-white mt-3 ms-md-4"  (click)="onReset()" style="font-size: medium; width: 120px;">Reset</button>
+              </div>
+            </form>
+          </div>
+      </div>
+      </div>
+      <div class="col-md-6" style="align-content: center;">
+        <h2 class="text-start space" style="color: #7F6A4F;">Get in touch with us</h2>
+        <p class="text-start">Biblical Counseling Trust of India,<br>F 55, 1st Floor, Manish Global Mall,<br>Plot No-2, LSC-1, Sector-22 Dwarka,<br>New Delhi 110077</p>
+        <p class="text-start space">Email us:<br>General Enquiry: bcti.del&#64;gmail.com<br>Counselling: counseling&#64;bcti.org.in</p>
+        <p class="text-start space">Contact No:<br>+91-9871961882</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Ribbon   -->
+<div class="page-header container-fluid space" style="background-color: #777E5C;">
+  <div class="container">
+    <div class="row border border-white border-4 p-4 text-center">
+      <div class="col-md-9">
+        <h2 class="text-center">Register for a Counseling Session</h2>
+      </div>
+      <div class="col-md-3">
+        <a type="button" class="btn btn-outline-light mt-2" href="#" style=" font-size: medium; width: 200px;">Register Now</a>
+      </div>
+    </div>
+  </div>
+</div>

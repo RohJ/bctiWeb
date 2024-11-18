@@ -1,319 +1,81 @@
-// header {
-//   padding: 10px;
-//   background: #ffffff;
-// }
-// .logo {
-//   width: 90px;
-// }
-// .logo:hover {
-//   cursor: pointer;
-// }
-// .desktop_menu {
-//   margin-top: 24px;
-// }
-// .desktop_menu ul {
-//   padding: 0;
-//   margin: 0;
-// }
-// .desktop_menu ul li {
-//   list-style-type: none;
-//   color: #7F6A4F;
-//   display: inline-block;
-//   font-size: 18px;
-//   font-weight: bold;
-//   margin-left: 26px;
-// }
-// .desktop_menu ul li:hover {
-//   font-size: 18px;
-//   font-weight: bold;
-//   cursor: pointer;
-//   color: #6CAB72;
-//   transition: 0.3s ease-in-out;
-// }
-// .menu-icon {
-//   display: none;
-// }
-// .mobile_menu ul li {
-//   list-style-type: none;
-//   color: #ffffff;
-//   display: inline-block;
-//   font-size: 18px;
-//   font-weight: bold;
-//   margin-left: 26px;
-// }
-// .mobile_menu ul li:hover {
-//   font-size: 18px;
-//   font-weight: bold;
-//   color: #6CAB72;
-//   transition: 0.3s ease-in-out;
+// ---------Responsive-navbar-active-animation-----------
+// function test(){
+// 	var tabsNewAnim = $('#navbarSupportedContent');
+// 	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+// 	var activeItemNewAnim = tabsNewAnim.find('.active');
+// 	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+// 	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+// 	var itemPosNewAnimTop = activeItemNewAnim.position();
+// 	var itemPosNewAnimLeft = activeItemNewAnim.position();
+// 	$(".hori-selector").css({
+// 		"top":itemPosNewAnimTop.top + "px",
+// 		"left":itemPosNewAnimLeft.left + "px",
+// 		"height": activeWidthNewAnimHeight + "px",
+// 		"width": activeWidthNewAnimWidth + "px"
+// 	});
+// 	$("#navbarSupportedContent").on("click","li",function(e){
+// 		$('#navbarSupportedContent ul li').removeClass("active");
+// 		$(this).addClass('active');
+// 		var activeWidthNewAnimHeight = $(this).innerHeight();
+// 		var activeWidthNewAnimWidth = $(this).innerWidth();
+// 		var itemPosNewAnimTop = $(this).position();
+// 		var itemPosNewAnimLeft = $(this).position();
+// 		$(".hori-selector").css({
+// 			"top":itemPosNewAnimTop.top + "px",
+// 			"left":itemPosNewAnimLeft.left + "px",
+// 			"height": activeWidthNewAnimHeight + "px",
+// 			"width": activeWidthNewAnimWidth + "px"
+// 		});
+// 	});
 // }
 
-@media screen and (min-width: 128px) and (max-width: 992px) {
-
-  .iphone {
-    width: 16.06em;
-    height: 30.6em;
-    border-radius: 1.875em;
-    margin: 2em;
-    position: relative;
-    display:inline-block;
-    background: #fff;
-  }
-
-  .iphone__item {
-    width: 16.06em;
-    height:1em;
-    position: absolute;
-    bottom:-2em;
-    color: darken(#1BBC9B, 10%);
-    text-align: center;
-  }
-
-  .iphone__power-btn{
-    width: 2.188em;
-    height: .188em;
-    background: #e0e0e0;
-    position: absolute;
-    right: 2.5em;
-    top: -.188em;
-  }
-
-  .iphone__left-btn {
-    width: .188em;
-    height: 1.250em;
-    top: 3.250em;
-    left: -.188em;
-    position: absolute;
-    background: #e0e0e0;
-
-    &:before {
-      content: '';
-      width: .188em;
-      height: .875em;
-      position: absolute;
-      top: 3em;
-      background: #e0e0e0;
-    }
-
-    &:after {
-      content: '';
-      width: .188em;
-      height: .875em;
-      position: absolute;
-      top: 5.5em;
-      background: #e0e0e0;
-    }
-  }
-
-  .iphone__details {
-    width: .438em;
-    height: .438em;
-    border-radius: 100%;
-    position: relative;
-    top: 1.313em;
-    left: 8em;
-    background: #7c7c7c;
-
-    &:before {
-      content: '';
-      width: 2.5em;
-      height: .25em;
-      border-radius: .25em;
-      position: absolute;
-      top: 1em;
-      left: -1em;
-      background: #7c7c7c;
-    }
-  }
-
-  .iphone__home-btn {
-    width: 2.25em;
-    height: 2.25em;
-    border-radius: 100%;
-    position: absolute;
-    bottom: 1em;
-    right: 6.75em;
-    background: #f7f7f7;
-
-    &:before {
-      content: '';
-      width: .813em;
-      height: .813em;
-      border: .15em solid #a8a8a8;
-      border-radius: .2em;
-      position: absolute;
-      top: .6em;
-      left: .57em;
-    }
-  }
-
-  .iphone__screen {
-    width: 14.5em;
-    height: 22.938em;
-    position: absolute;
-    top: 3.75em;
-    left: .750em;
-    overflow: hidden;
-  }
-
-  .iphone__content {
-    position: relative;
-    background-color: #D2527F;
-    width:100%;
-    height:100%;
-  }
-
-  /**
-  * Navigation Defaults
-  */
-
-  .nav {
-    position: absolute;
-    z-index:100;
-    opacity:0;
-    transition-property: all;
-    transition-duration: 300ms;
-    transform: translateX(-100%);
-    width:100%;
-    height:100%;
-  }
-
-  .nav--active .nav {
-    opacity:1;
-    background-color: #333;
-    transition: all 300ms ease-in-out;
-    transform: translateX(0);
-  }
-
-  .nav__list {
-    margin:0;
-    padding:10px;
-  }
-
-  .nav__item {
-    list-style-type: none;
-    text-align: left;
-  }
-
-  .nav__link {
-    font-size:1.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #FFFFFF;
-    opacity:1;
-    transition: opacity 300ms ease-in-out;
-    opacity:0;
-    transition-delay:500ms;
-  }
-
-  /* Default navigation icon */
-  .nav__trigger {
-    display:block;
-    position:absolute;
-    width:30px;
-    height:25px;
-    right:10px;
-    top:10px;
-    z-index:200;
-  }
-
-  .nav--active .nav__trigger {
-    opacity:0.5;
-  }
-
-  .nav__icon {
-    display:inline-block;
-    position: relative;
-    width:30px;
-    height:5px;
-    background-color: #FFFFFF;
-    transition-property: background-color, transform;
-    transition-duration: 300ms;
-
-    &:before,
-    &:after {
-      content:'';
-      display:block;
-      width:30px;
-      height:5px;
-      position: absolute;
-      background: #FFFFFF;
-      transition-property: margin, transform;
-      transition-duration: 300ms;
-
-    }
-
-    &:before {
-      margin-top:-10px;
-    }
-
-    &:after {
-      margin-top:10px;
-    }
-  }
-
-  /* Don't nest if you don't have to. */
-
-  /**
-  * Style #1
-  */
-
-  .style-1 {
-
-    .nav--active .nav__link {
-      opacity:1;
-    }
-
-    .nav--active .nav__icon {
-      background: rgba(0,0,0,0.0);
-
-      &:before {
-        margin-top:0;
-        transform:rotate(45deg);
-      }
-
-      &:after {
-        margin-top:0;
-        transform:rotate(-45deg);
-      }
-    }
-
-  }
+// $(document).ready(function(){
+// 	setTimeout(function(){ test(); });
+// });
+// $(window).on('resize', function(){
+// 	setTimeout(function(){ test(); }, 500);
+// });
+// $(".navbar-toggler").click(function(){
+// 	$(".navbar-collapse").slideToggle(300);
+// 	setTimeout(function(){ test(); });
+// });
 
 
-  // .desktop_menu {
-  //   position: fixed !important;
-  //   right: -280px;
-  //   transition: 0.4s ease-in-out;
-  //   top: 74px;
-  //   background: #ffffff;
-  //   width: 280px;
-  //   height: 100%;
-  // }
-  // .desktop_menu ul li {
-  //   display: block;
-  //   text-align: left;
-  //   margin: 0;
-  //   padding: 10px 0 10px 26px;
-  //   border-bottom: 1px solid rgb(255, 255, 255);
-  //   // border-left: 1px solid grey;
-  //   // border-top: 1px solid grey;
-  // }
-  // .menu-icon {
-  //   display: block;
-  //   color: #777E5C;
-  //   font-size: 40px;
-  //   padding-top: 10px;
-  // }
-  // .mobile_menu {
-  //   right: 0;
-  //   transition: 0.4s ease-in-out;
-  //   background-color: #7F6A4F !important;
-  //   z-index: 999;
-  // }
-}
+// // --------------add active class-on another-page move----------
+// jQuery(document).ready(function($){
+// 	// Get current path and find target link
+// 	var path = window.location.pathname.split("/").pop();
 
-@media screen and (min-width: 991px) {
+// 	// Account for home page with empty path
+// 	if ( path == '' ) {
+// 		path = 'index.html';
+// 	}
+
+// 	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+// 	// Add active class to target link
+// 	target.parent().addClass('active');
+// });
+
+
+
+
+// Add active class on another page linked
+// ==========================================
+// $(window).on('load',function () {
+//     var current = location.pathname;
+//     console.log(current);
+//     $('#navbarSupportedContent ul li a').each(function(){
+//         var $this = $(this);
+//         // if the current path is like this link, make it active
+//         if($this.attr('href').indexOf(current) !== -1){
+//             $this.parent().addClass('active');
+//             $this.parents('.menu-submenu').addClass('show-dropdown');
+//             $this.parents('.menu-submenu').parent().addClass('active');
+//         }else{
+//             $this.parent().removeClass('active');
+//         }
+//     })
+// });
 
 // Import Fonts
 
@@ -321,14 +83,13 @@
 
 // Variables
 
-$default-font:'Roboto', sans-serif; // Roboto Google font
-$global-font-size:16px; // Global font sizing
+// $default-font:'Roboto', sans-serif; // Roboto Google font
+$global-font-size:12px; // Global font sizing
 $global-font-weight:500; // Global font weight
 $global-font-smoothing:antialiased; // Global smoothing method
 $content-width:700px; // Width of wrapper
 $background:linear-gradient(135deg, #8254EA 0%, #E86DEC 100%); // Body background
 $full-height: 100vh; // Height of body
-$nav-height: 72px;
 
 $title-width:400px; // Width of title block
 
@@ -341,15 +102,15 @@ ul{padding:0;margin:0;}li{list-style-type:none;}input[type='radio']{display:none
 %center{
      margin:auto;
     top:0;
-    // bottom:0;
-    // left:0;
+    bottom:0;
+    left:0;
     right:0;
 }
 
 // Styles
 
 body{
-  height: $nav-height;
+  height: $full-height;
   font-weight: $global-font-weight;
   font-family:$default-font;
   background:$background;
@@ -358,12 +119,10 @@ body{
   .swanky{
     @extend %center;
     perspective:600px;
-    // width:$content-width;
-    width: 100%;
+    width:$content-width;
     position:absolute;
     margin:auto;
     height:360px;
-    z-index: 9;
     &_title{
       float:right;
       text-align:left;
@@ -462,23 +221,19 @@ body{
       }
     }
     &_wrapper{
-      // width: 225px;
+      width: 225px;
       //transform: rotateY(14deg) rotateX(-2deg) rotateZ(-2deg);
       height: auto;
-      // overflow: hidden;
-      overflow: visible;
-
+      overflow: hidden;
       border-radius: 4px;
-      // background: #2a394f;
+      background: #2a394f;
       label{
         padding:25px;
-        // float:left;
-        float:right;
+        float:left;
         height:72px;
         border-bottom: 1px solid #293649;
         position:relative;
-        // width:100%;
-        width:140px;
+        width:100%;
         color:rgb(239, 244, 250);
         transition:text-indent .15s, height .3s;
         box-sizing:border-box;
@@ -559,12 +314,12 @@ body{
 
 // Hide show content
 
-input[type='radio']:hover + label .swanky_wrapper__content{
+input[type='radio']:checked + label .swanky_wrapper__content{
   display: block;
   top: 68px;
   border-bottom: 1px solid rgb(33, 46, 65);
 }
-input[type="radio"]:hover + label > .lil_arrow {
+input[type="radio"]:checked + label > .lil_arrow {
   -webkit-transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
   -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -574,24 +329,22 @@ input[type="radio"]:hover + label > .lil_arrow {
   border-top: 2px solid rgb(20, 163, 249);
   border-right: 2px solid rgb(20, 163, 249);
 }
-input[type='radio']:hover + label{
-  // height: 325px;
-  height: 273px;
-  background: #212e41;
+input[type='radio']:checked + label{
+  height: 325px;background: #212e41;
   text-indent:4px;
   transition-property:height;
   transition-duration:.6s; -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-input[type='radio']:hover + label .bar{
+input[type='radio']:checked + label .bar{
   width:0;
 }
 
-input[type='radio']:hover + label{
+input[type='radio']:checked + label{
   @for $i from 1 through 4{
     li:nth-of-type(#{$i}){
-      animation:in .15s .45s + calc($i/8) forwards;
+      animation:in .15s .45s + $i/8 forwards;
       -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -moz-animation:in .15s .45s + calc($i/8) forwards;
+      -moz-animation:in .15s .45s + $i/8 forwards;
       -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
   }
@@ -636,5 +389,4 @@ input[type='radio']:hover + label{
   img{
     width:30px;
   }
-}
 }

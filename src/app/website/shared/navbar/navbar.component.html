@@ -1,5 +1,36 @@
-<header>
-  <div class="container container-nav">
+<header class="d-block  d-md-block d-lg-none">
+
+  <div class="iphone style-1">
+    <!-- <div class="iphone__item">#1</div>
+    <div class="iphone__power-btn"></div>
+    <div class="iphone__left-btn"></div>
+    <div class="iphone__details"></div> -->
+    <div [ngClass]="{ 'nav--active': open }"  class="iphone__screen">
+      <a href="#" class="nav__trigger" (click)="toggle()"><span class="nav__icon"></span></a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item dropdown"><a class="nav__link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#">About Us</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="iphone__content"></div>
+    </div>
+    <!-- <div class="iphone__home-btn"></div> -->
+  </div>
+
+
+
+  <!-- <div class="container container-nav ">
       <div class="row">
           <div class="col-md-3 col-sm-3 col-3">
               <div class="logo">
@@ -18,10 +49,173 @@
                       <li (click)="closeMenu()">Resources</li>
                       <li (click)="closeMenu()">Alumni</li>
                       <li [routerLink]="['/calendar']" (click)="closeMenu()">Calendar</li>
-                      <li (click)="closeMenu()">Contact</li>
+                      <li [routerLink]="['/contact']" (click)="closeMenu()">Contact</li>
                   </ul>
               </div>
           </div>
       </div>
-  </div>
+  </div> -->
+
+
+  <!-- <nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+            </li>
+        </ul>
+    </div>
+</nav> -->
+
 </header>
+
+<body class="d-none d-lg-block">
+  <!-- / Begin Body -->
+<div class='swanky'>
+  <!-- /////////// Begin Dropdown //////////// -->
+  <div class='swanky_wrapper'>
+
+    <!-- <input id='Contact' name='radio' type='radio'> -->
+    <label>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dash.png'> -->
+      <span>Contact Us</span>
+      <!-- <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>Tools</li>
+          <li>Reports</li>
+          <li>Analytics</li>
+        </ul>
+      </div> -->
+    </label>
+
+    <!-- <input id='Calendar' name='radio' type='radio'> -->
+    <label>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/del.png'> -->
+      <span>Calendar</span>
+      <!-- <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>New Sales</li>
+          <li>Expired Sales</li>
+          <li>Sales Reports</li>
+        </ul>
+      </div> -->
+    </label>
+
+    <!-- <input id='Resources' name='radio' type="text"> -->
+    <label>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mess.png'> -->
+      <span>Resources</span>
+      <!-- <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>Inbox</li>
+          <li>Outbox</li>
+          <li>Sent</li>
+        </ul>
+      </div> -->
+    </label>
+
+    <input id='Participate' name='radio' type='radio'>
+    <label for='Participate'>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/users.png'> -->
+      <span>Participate</span>
+      <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>Donate</li>
+          <li>Alumini</li>
+          <li>Mentoring</li>
+        </ul>
+      </div>
+    </label>
+
+    <input id='Courses' name='radio' type='radio'>
+    <label for='Courses'>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/users.png'> -->
+      <span>Courses</span>
+      <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>English Courses</li>
+          <li>CCEF-BCTI Courses</li>
+          <li>Hindi Courses</li>
+        </ul>
+      </div>
+    </label>
+
+    <input id='Counseling' name='radio' type='radio'>
+    <label for='Counseling'>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/users.png'> -->
+      <span>Counseling</span>
+      <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>Biblical counselling</li>
+          <li>Book an apointment</li>
+          <li>Coaching Sessions</li>
+        </ul>
+      </div>
+    </label>
+
+    <input id='About' name='radio' type='radio'>
+    <label for='About'>
+      <!-- <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/users.png'> -->
+      <span>About Us</span>
+      <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>Our Vision</li>
+          <li>Our Beliefs</li>
+          <li>Our Team</li>
+        </ul>
+      </div>
+    </label>
+    <!-- <input id='Settings' radio='radio' type='radio'>
+    <label for='Settings'>
+      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/set.png'>
+      <span>Settings</span>
+      <div class='lil_arrow'></div>
+      <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+        <ul>
+          <li>Databases</li>
+          <li>Design</li>
+          <li>Change User</li>
+          <li>Log Out</li>
+        </ul>
+      </div>
+    </label> -->
+  </div>
+  <!-- /////////// End Dropdown //////////// -->
+</div>
+
+</body>

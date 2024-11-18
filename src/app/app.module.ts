@@ -12,6 +12,9 @@ import { AboutComponent } from './website/about/about.component';
 import { CounselingComponent } from './website/counseling/counseling.component';
 import { CoursesComponent } from './website/courses/courses.component';
 import { CalendarComponent } from './website/calendar/calendar.component';
+import { ContactComponent } from './website/contact/contact.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { CalendarComponent } from './website/calendar/calendar.component';
     AboutComponent,
     CounselingComponent,
     CoursesComponent,
-    CalendarComponent
+    CalendarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
