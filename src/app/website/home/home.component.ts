@@ -99,6 +99,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     console.log(this.contactForm);
     console.log(JSON.stringify(this.contactForm.value, null, 2));
+
   }
 
   onReset(): void {

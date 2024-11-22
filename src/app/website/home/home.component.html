@@ -109,17 +109,17 @@
                     <ul class="glide__slides">
                       <li class="glide__slide">
                         <div class="ratio ratio-16x9">
-                          <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                          <img src="assets/img/landing/counseling.webp" alt="" class="rounded pb-3">
                         </div>
                       </li>
                       <li class="glide__slide">
                           <div class="ratio ratio-16x9">
-                            <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                            <img src="assets/img/landing/couple_counseling.webp" alt="" class="rounded pb-3">
                           </div>
                       </li>
                       <li class="glide__slide">
                           <div class="ratio ratio-16x9">
-                            <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                            <img src="assets/img/landing/counseling_women.webp" alt="" class="rounded pb-3">
                           </div>
                       </li>
                     </ul>
@@ -152,17 +152,17 @@
                     <ul class="glide__slides">
                       <li class="glide__slide">
                         <div class="ratio ratio-16x9">
-                          <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                          <img src="assets/img/landing/training1.webp" alt="" class="rounded pb-3">
                         </div>
                       </li>
                       <li class="glide__slide">
                           <div class="ratio ratio-16x9">
-                            <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                            <img src="assets/img/landing/training2.webp" alt="" class="rounded pb-3">
                           </div>
                       </li>
                       <li class="glide__slide">
                           <div class="ratio ratio-16x9">
-                            <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                            <img src="assets/img/landing/training3.webp" alt="" class="rounded pb-3">
                           </div>
                       </li>
                     </ul>
@@ -197,17 +197,17 @@
               <ul class="glide__slides">
                 <li class="glide__slide">
                   <div class="ratio ratio-16x9">
-                    <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                    <img src="assets/img/landing/courses3.webp" alt="" class="rounded pb-3">
                   </div>
                 </li>
                 <li class="glide__slide">
                     <div class="ratio ratio-16x9">
-                      <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                      <img src="assets/img/landing/courses2.webp" alt="" class="rounded pb-3">
                     </div>
                 </li>
                 <li class="glide__slide">
                     <div class="ratio ratio-16x9">
-                      <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                      <img src="assets/img/landing/courses1.webp" alt="" class="rounded pb-3">
                     </div>
                 </li>
               </ul>
@@ -410,15 +410,13 @@
 <div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
     <div class="row flex-sm-row-reverse" >
-      <!-- <h2 class="text-start space d-none d-sm-block d-md-none" style="color: #7F6A4F;">Our Mission</h2> -->
       <div class="col-md-6 mb-4">
         <div class="card shadow-none">
-          <!-- <h5 class="card-header" style="background-color:#FFE5DD;">Offerings Form</h5> -->
           <div class="card-body" >
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
               <div class="form-group  mt-3">
                 <label>Full Name</label>
-                <input type="text" formControlName="fullname" class="form-control mt-3" [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"/>
+                <input type="text" name="name" formControlName="fullname" class="form-control mt-3" [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"/>
                 <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
                   <div *ngIf="f['fullname'].errors['required']">Name is required</div>
               </div>
@@ -426,7 +424,7 @@
 
               <div class="form-group  mt-3">
                 <label>Email</label>
-                <input type="text" formControlName="email" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
+                <input type="text" name="email" formControlName="email" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
                 @if (submitted && f['email'].errors) {
                 <div class="invalid-feedback">
                   @if (f['email'].errors['required']) {
@@ -441,7 +439,7 @@
 
               <div class="form-group  mt-3">
                 <label>Mobile Number</label>
-                <input type="number" formControlName="phone" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }"/>
+                <input type="number" name="mobile" formControlName="phone" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }"/>
                 @if (submitted && f['phone'].errors) {
                 <div class="invalid-feedback">
                   @if (f['phone'].errors['required']) {
@@ -456,7 +454,7 @@
 
               <div class="form-group  mt-3">
                 <label>Message</label>
-                <input type="text" formControlName="message" class="form-control  mt-3" style="height: 80px;" [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"/>
+                <input type="text" name="message" formControlName="message" class="form-control  mt-3" style="height: 80px;" [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"/>
                 @if (submitted && f['message'].errors) {
                 <div class="invalid-feedback">
                   @if (f['message'].errors['required']) {
@@ -468,12 +466,13 @@
 
 
               <div class="form-group my-3">
-                <!-- <button type="submit" class="btn btn-dark">Submit</button> -->
                 <button type="button" class="btn btn-secondary text-white mt-3" style="background-color: #6CAB72; font-size: medium; width: 200px;">Submit</button>
-                <!-- <button type="button" class="btn btn-dark" (click)="onReset()" class="btn btn-warning float-right">Reset</button> -->
                 <button type="button" class="btn btn-dark text-white mt-3 ms-md-4"  (click)="onReset()" style="font-size: medium; width: 120px;">Reset</button>
               </div>
-            </form>
+            </form> -->
+
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebNk_PuI0BE85ZZSzoBupFL6V7CyDzE98CO6ADbVY_UyYFJA/viewform?embedded=true" width="100%" height="700px" marginheight="0" marginwidth="0">Loading…</iframe>
+
           </div>
       </div>
       </div>
