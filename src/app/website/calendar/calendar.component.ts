@@ -5,9 +5,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss'
 })
+
 export class CalendarComponent implements OnInit, OnDestroy {
 
+
   ngOnInit(): void {
+
 
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('custom-class');

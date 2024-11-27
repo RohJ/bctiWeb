@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import  { ReactiveFormsModule }  from  '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { CoursesComponent } from './website/courses/courses.component';
 import { CalendarComponent } from './website/calendar/calendar.component';
 import { ContactComponent } from './website/contact/contact.component';
 
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 
 @NgModule({
@@ -33,8 +35,9 @@ import { ContactComponent } from './website/contact/contact.component';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    HttpClientModule,
 ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -272,12 +272,30 @@
   </div> -->
   <!--Row Cols-->
   <div class="row row-cols-1 row-cols-md-3 g-5">
+    <div class="text-dark mx-3 mx-md-4" *ngFor="let items of sortedArray; let i = index">
+      <div *ngIf="i < 3" class="row" style="align-items: center;">
+        <div class="col">
+          <div class="card" style="background-color: transparent; border: none;">
+            <img src="https://placehold.co/600x400" class="card-img-top rounded" alt="...">
+            <div class="mt-4">
+              <h6 class="card-title">{{items.summary }}</h6>
+              <h6 class="card-title">{{items.sdate | date:'mediumDate'}}<br>{{ items.sdate | date:'shortTime' }}</h6>
+              <p>{{ items.description }}</p>
+            </div>
+            <button type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Row Cols-->
+  <!-- <div class="row row-cols-1 row-cols-md-3 g-5">
     <div class="col">
       <div class="card" style="background-color: transparent; border: none;">
         <img src="https://placehold.co/600x400" class="card-img-top rounded" alt="...">
         <div class="mt-4">
-          <h6 class="card-title">Oct 2, 2024<br>5 PM</h6>
-          <p>Participants will learn to apply fundamental Biblical truths to their own daily lives, identify areas where they need to change.</p>
+          <h6 class="card-title">{{items.sdate | date:'mediumDate'}}<br>{{ items.sdate | date:'shortTime' }}</h6>
+          <p>{{ items.summary }}</p>
         </div>
         <button type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</button>
       </div>
@@ -304,7 +322,7 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
 <!--Frequently Asked Questions-->
 <div class="container-fluid" style="background-color: #FFFCF0; margin-top: -3em;">
   <div class="container">
