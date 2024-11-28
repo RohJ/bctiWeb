@@ -1,7 +1,7 @@
 <!-- Banner   -->
 <div class="page-header container-fluid" style="background-color: #777E5C;">
   <div class="container">
-      <h2 class="text-center mt-5" style="color: #FFDE82;">Equipping Christians to be an ambassador for Christ</h2>
+      <h2 class="text-center mt-5" style="color: #FFDE82;">Equipping Christians to be Ambassadors for Christ</h2>
       <h4 class="text-center mt-4 mb-5" style="font-weight: 400 !important;">These are courses aimed at equipping Christians to help people navigate the challenges and struggles of modern Christian living.</h4>
   </div>
 </div>
@@ -66,12 +66,42 @@
   </div>
 </div>
 
-<!--Upcoming Courses-->
+<!--Upcoming Events-->
 <div class="container-fluid" style="background-color: #D2D8BE;">
   <div class="container">
-    <h2 class="text-start space" style="color: #7F6A4F;">Upcoming Courses</h2>
+    <h2 class="text-start space" style="color: #7F6A4F;">Upcoming Events</h2>
+  <!--Row Cols-->
+  <div class="row row-cols-1 row-cols-md-3 g-5">
+    <div *ngFor="let items of sortedArray; let i = index">
+      <div *ngIf="i < 3" class="row" style="align-items: center;">
+        <div class="col">
+          <div class="card" style="background-color: transparent; border: none;">
+            <img *ngIf="items.summary =='Instruments in the Redeemers Hands'" src="assets/img/landing/irh_title.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='Marriage and Parenting'" src="assets/img/landing/mnp.webp" class="card-img-top rounded" alt="...">
+            <div  class="mt-4">
+              <h6 class="card-title">{{items.summary }}</h6>
+              <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
+              <h6 class="card-title">Time: <span style="font-weight: 400;">{{ items.sdate | date:'shortTime' }}</span></h6>
+              <p style="white-space: pre-line">{{ items.description }}</p>
+            </div>
+            <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://irh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://hpc.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Health and Healing'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://hnh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://mnp.bcti.org.in//" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Upcoming Courses-->
+<!-- <div class="container-fluid" style="background-color: #D2D8BE;">
+  <div class="container">
+    <h2 class="text-start space" style="color: #7F6A4F;">Upcoming Courses</h2> -->
     <!--Row Cols-->
-    <div class="row row-cols-1 row-cols-md-3 g-5">
+    <!-- <div class="row row-cols-1 row-cols-md-3 g-5">
       <div class="col">
         <div class="card" style="background-color: transparent; border: none;">
           <img src="https://placehold.co/600x400" class="card-img-top rounded" alt="...">
@@ -102,20 +132,18 @@
           <button type="button" class="btn btn-secondary text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</button>
         </div>
       </div>
-    </div>
+    </div>  -->
   </div>
 </div>
 
-<!--Contect Form-->
+<!--Contact Form-->
 <div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
     <div class="row flex-sm-row-reverse" >
-      <!-- <h2 class="text-start space d-none d-sm-block d-md-none" style="color: #7F6A4F;">Our Mission</h2> -->
       <div class="col-md-6 mb-4">
         <div class="card shadow-none">
-          <!-- <h5 class="card-header" style="background-color:#FFE5DD;">Offerings Form</h5> -->
           <div class="card-body" >
-            <form [formGroup]="coursesForm" (ngSubmit)="onSubmit()">
+            <!-- <form [formGroup]="coursesForm" (ngSubmit)="onSubmit()">
               <div class="form-group  mt-3">
                 <label>Full Name</label>
                 <input type="text" formControlName="fullname" class="form-control mt-3" [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"/>
@@ -168,12 +196,13 @@
 
 
               <div class="form-group my-3">
-                <!-- <button type="submit" class="btn btn-dark">Submit</button> -->
                 <button type="button" class="btn btn-secondary text-white mt-3" style="background-color: #6CAB72; font-size: medium; width: 200px;">Submit</button>
-                <!-- <button type="button" class="btn btn-dark" (click)="onReset()" class="btn btn-warning float-right">Reset</button> -->
                 <button type="button" class="btn btn-dark text-white mt-3 ms-md-4"  (click)="onReset()" style="font-size: medium; width: 120px;">Reset</button>
               </div>
-            </form>
+            </form> -->
+
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebNk_PuI0BE85ZZSzoBupFL6V7CyDzE98CO6ADbVY_UyYFJA/viewform?embedded=true" width="100%" height="700px" marginheight="0" marginwidth="0">Loading…</iframe>
+
           </div>
       </div>
       </div>

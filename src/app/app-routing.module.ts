@@ -6,6 +6,7 @@ import { CounselingComponent } from './website/counseling/counseling.component';
 import { CoursesComponent } from './website/courses/courses.component';
 import { CalendarComponent } from './website/calendar/calendar.component';
 import { ContactComponent } from './website/contact/contact.component';
+import { AlumniComponent } from './website/participate/alumni/alumni.component';
 
 const routes: Routes = [
   { path: '',         component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'courses',         component: CoursesComponent },
   { path: 'calendar',         component: CalendarComponent },
   { path: 'contact',         component: ContactComponent },
+  { path: 'alumni',         component: AlumniComponent },
 ];
 
 @NgModule({

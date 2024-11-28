@@ -272,17 +272,24 @@
   </div> -->
   <!--Row Cols-->
   <div class="row row-cols-1 row-cols-md-3 g-5">
-    <div class="text-dark mx-3 mx-md-4" *ngFor="let items of sortedArray; let i = index">
+    <div *ngFor="let items of sortedArray; let i = index">
       <div *ngIf="i < 3" class="row" style="align-items: center;">
         <div class="col">
           <div class="card" style="background-color: transparent; border: none;">
-            <img src="https://placehold.co/600x400" class="card-img-top rounded" alt="...">
-            <div class="mt-4">
+            <img *ngIf="items.summary =='Instruments in the Redeemers Hands'" src="assets/img/landing/irh_title.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='Marriage and Parenting'" src="assets/img/landing/mnp.webp" class="card-img-top rounded" alt="...">
+            <div  class="mt-4">
               <h6 class="card-title">{{items.summary }}</h6>
-              <h6 class="card-title">{{items.sdate | date:'mediumDate'}}<br>{{ items.sdate | date:'shortTime' }}</h6>
-              <p>{{ items.description }}</p>
+              <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
+              <h6 class="card-title">Time: <span style="font-weight: 400;">{{ items.sdate | date:'shortTime' }}</span></h6>
+              <p style="white-space: pre-line">{{ items.description }}</p>
             </div>
-            <button type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</button>
+            <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://irh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://hpc.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Health and Healing'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://hnh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://mnp.bcti.org.in//" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
           </div>
         </div>
       </div>
@@ -369,7 +376,7 @@
     </div>
   </div>
 </div>
-<!-- Text Tewstimonies Slider-->
+<!-- Text Testimonies Slider-->
 <div class="container-fluid" style="background-color: #7F6A4F;">
   <div class="container">
     <h1 class="text-center space" style="color: #7F6A4F;">Hear From Our Students</h1>
@@ -424,7 +431,7 @@
   <!-- </div> -->
   </div>
  </div>
-<!--Contect Form-->
+<!--Contact Form-->
 <div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
     <div class="row flex-sm-row-reverse" >
