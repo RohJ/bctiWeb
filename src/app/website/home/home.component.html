@@ -16,7 +16,7 @@
             </button>
           </div>
           <div class="col d-flex justify-content-center">
-            <button class="card card_header card-pop"  style= "align-items: center;" [routerLink]="['/courses']">
+            <button class="card card_header card-pop"  style= "align-items: center;" [routerLink]="['/alumni']">
               <span class="text-center" style="font-size:8em; color: #6CAB72;"><i class="bi bi-gear-fill"></i></span>
               <div class="card-body" style="margin-top: -1em;">
                 <p class="card-title text-center">I am here for<br><h4>Training</h4></p>
@@ -37,22 +37,22 @@
 <!--Mission Section-->
 <div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
-  <div class="row flex-sm-row-reverse" >
+    <div class="row flex-sm-row-reverse" >
     <!-- <h2 class="text-start space d-none d-sm-block d-md-none" style="color: #7F6A4F;">Our Mission</h2> -->
-    <div class="col-md-6 mb-4">
-      <div class="ratio ratio-16x9">
-      <iframe preload="none" class="absolute inset-0 z-10 h-full w-full object-cover focus:outline-none" src="https://videocdn.cdnpk.net/videos/5bda907d-74ba-4de7-82b0-e512e44d88ce/horizontal/previews/videvo_watermarked/large.mp4" type="video/mp4">
-      </iframe>
-    </div>
-    </div>
-    <div class="col-md-6" >
-      <h2 class="text-start space" style="color: #7F6A4F;">Our Mission</h2>
-      <p class="text-start">We are living in troubled times and the journey we are going through, is often unkind.</p>
-      <p class="text-start space">It is God’s desire that we discover the power of His comfort, healing and restoration in the shelter of genuine, authentic and caring relationships.</p>
-      <a type="button" class="btn text-white" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Explore Our Mission</a>
+      <div class="col-md-6 mb-4">
+        <div class="ratio ratio-16x9">
+        <iframe preload="none" class="absolute inset-0 z-10 h-full w-full object-cover focus:outline-none" src="https://videocdn.cdnpk.net/videos/5bda907d-74ba-4de7-82b0-e512e44d88ce/horizontal/previews/videvo_watermarked/large.mp4" type="video/mp4">
+        </iframe>
+      </div>
+      </div>
+      <div class="col-md-6" >
+        <h2 class="text-start space" style="color: #7F6A4F;">Our Mission</h2>
+        <p class="text-start">We are living in troubled times and the journey we are going through, is often unkind.</p>
+        <p class="text-start space">It is God’s desire that we discover the power of His comfort, healing and restoration in the shelter of genuine, authentic and caring relationships.</p>
+        <a type="button" class="btn text-white" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Explore Our Mission</a>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <!-- Video Tewstimonies -->
@@ -130,7 +130,7 @@
               <div class="col-md-6">
                 <h2 class="text-start spacer" style="color: #7F6A4F;">Counselling</h2>
                 <p class="text-start">Feeling worn out, confused, burnt out, or just plain tired? We're here for you. Come share your story with us, and we will offer you a nurturing environment where you can share your concerns and struggles. In addition, we provide guidance and truth rooted in love to help you navigate through life's challenges and find clarity and relief.</p>
-                <a type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+                <a type="button" class="btn text-white mt-3" [routerLink]="['/counseling']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
               </div>
             </div>
       </div>
@@ -174,7 +174,7 @@
               <div class="col-md-6">
                 <h2 class="text-start spacer" style="color: #7F6A4F;">Training</h2>
                 <p class="text-start" >Enhance your skills with our specialised courses in English and Hindi. Whether you're a layperson seeking personal growth, a church leader, or a pastor, our training programs are tailored to With access to high-quality content and interactive learning materials, you can develop your counselling skills with our online classes. Take advantage of this opportunity to grow and enhance your ability to counsel others with confidence and competence.</p>
-                <a type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+                <a type="button" class="btn text-white mt-3" [routerLink]="['/alumni']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
               </div>
             </div>
       </div>
@@ -219,7 +219,7 @@
         <div class="col-md-6">
           <h2 class="text-start spacer" style="color: #7F6A4F;">Online Courses</h2>
           <p class="text-start" >Access flexible, in-depth learning from anywhere with our online classes, available in both English and Hindi. These courses are designed to equip you with practical tools and knowledge. We focus on providing comprehensive instruction to help you apply Biblical principles in real-life situations and make a meaningful impact in your community.</p>
-          <a type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+          <a type="button" class="btn text-white mt-3" [routerLink]="['/courses']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
         </div>
       </div>
     </div>
@@ -289,7 +289,7 @@
             <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://irh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
             <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://hpc.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
             <a *ngIf="items.summary =='Health and Healing'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://hnh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://mnp.bcti.org.in//" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://mnp.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
           </div>
         </div>
       </div>

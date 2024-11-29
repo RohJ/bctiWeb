@@ -197,9 +197,11 @@
             Courses
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownCourses">
-            <li><a class="dropdown-item" [routerLink]="['/courses']" fragment="englishCourses">English Courses</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/courses']" fragment="englishCourses">Overview</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/courses']">CCEF-BCTI Courses</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/engcourses']" fragment="englishCourses">English Courses</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" target="_blank" rel="noreferrer noopener" href="https://bcti-ccef.bcti.org.in/">CCEF-BCTI Courses</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" [routerLink]="['/courses']">Hindi Courses</a></li>
           </ul>
