@@ -16,6 +16,9 @@ import { CalendarComponent } from './website/calendar/calendar.component';
 import { ContactComponent } from './website/contact/contact.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { EngcoursesComponent } from './website/engcourses/engcourses.component';
+import { HpcComponent } from './website/hpc/hpc.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     CounselingComponent,
     CoursesComponent,
     CalendarComponent,
-    ContactComponent
+    ContactComponent,
+    EngcoursesComponent,
+    HpcComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FontAwesomeModule
 ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

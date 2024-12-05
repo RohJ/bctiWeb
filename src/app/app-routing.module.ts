@@ -8,6 +8,7 @@ import { CalendarComponent } from './website/calendar/calendar.component';
 import { ContactComponent } from './website/contact/contact.component';
 import { AlumniComponent } from './website/participate/alumni/alumni.component';
 import { EngcoursesComponent } from './website/engcourses/engcourses.component';
+import { HpcComponent } from './website/hpc/hpc.component';
 
 const routes: Routes = [
   { path: '',         component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'contact',         component: ContactComponent },
   { path: 'alumni',         component: AlumniComponent },
   { path: 'engcourses',         component: EngcoursesComponent },
+  { path: 'hpc',         component: HpcComponent },
 ];
 
 @NgModule({
