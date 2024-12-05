@@ -2,13 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from 'src/app/_services/user.service';
 import Glide from '@glidejs/glide';
 
-
 @Component({
-  selector: 'app-hpc',
-  templateUrl: './hpc.component.html',
-  styleUrl: './hpc.component.scss'
+  selector: 'app-irh',
+  templateUrl: './irh.component.html',
+  styleUrl: './irh.component.scss'
 })
-export class HpcComponent implements OnInit, OnDestroy {
+export class IrhComponent implements OnInit, OnDestroy {
 
   todayDate : number = Date.now();
   startDate : number = 0;
@@ -28,7 +27,7 @@ export class HpcComponent implements OnInit, OnDestroy {
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('custom-class');
 
-    new Glide(".testimony_cards_hpc", {
+    new Glide(".testimony_cards_irh", {
       type: "carousel",
       startAt: 0,
       focusAt: 0,
@@ -64,7 +63,7 @@ export class HpcComponent implements OnInit, OnDestroy {
 
       for (let j = 0; j < this.createData.items.length; j++) {
 
-        if(this.createData.items[j].summary !== "How People Change") {
+        if(this.createData.items[j].summary !== "Instruments in the Redeemers Hands") {
 
               delete this.createData.items[j];
         } else if(this.createData.items[j].status == 'cancelled') {

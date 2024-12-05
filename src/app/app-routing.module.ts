@@ -9,6 +9,7 @@ import { ContactComponent } from './website/contact/contact.component';
 import { AlumniComponent } from './website/participate/alumni/alumni.component';
 import { EngcoursesComponent } from './website/engcourses/engcourses.component';
 import { HpcComponent } from './website/hpc/hpc.component';
+import { IrhComponent } from './website/irh/irh.component';
 
 const routes: Routes = [
   { path: '',         component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'alumni',         component: AlumniComponent },
   { path: 'engcourses',         component: EngcoursesComponent },
   { path: 'hpc',         component: HpcComponent },
+  { path: 'irh',         component: IrhComponent },
 ];
 
 @NgModule({
