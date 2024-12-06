@@ -19,6 +19,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { EngcoursesComponent } from './website/engcourses/engcourses.component';
 import { HpcComponent } from './website/hpc/hpc.component';
 import { IrhComponent } from './website/irh/irh.component';
+import { HnhComponent } from './website/hnh/hnh.component';
+import { MnpComponent } from './website/mnp/mnp.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { IrhComponent } from './website/irh/irh.component';
     ContactComponent,
     EngcoursesComponent,
     HpcComponent,
-    IrhComponent
+    IrhComponent,
+    HnhComponent,
+    MnpComponent
   ],
   imports: [
     BrowserModule,

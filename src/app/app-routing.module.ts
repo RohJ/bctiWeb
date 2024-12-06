@@ -10,6 +10,8 @@ import { AlumniComponent } from './website/participate/alumni/alumni.component';
 import { EngcoursesComponent } from './website/engcourses/engcourses.component';
 import { HpcComponent } from './website/hpc/hpc.component';
 import { IrhComponent } from './website/irh/irh.component';
+import { HnhComponent } from './website/hnh/hnh.component';
+import { MnpComponent } from './website/mnp/mnp.component';
 
 const routes: Routes = [
   { path: '',         component: HomeComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'engcourses',         component: EngcoursesComponent },
   { path: 'hpc',         component: HpcComponent },
   { path: 'irh',         component: IrhComponent },
+  { path: 'hnh',         component: HnhComponent },
+  { path: 'mnp',         component: MnpComponent },
 ];
 
 @NgModule({
