@@ -64,7 +64,6 @@ export class IrhComponent implements OnInit, OnDestroy {
       for (let j = 0; j < this.createData.items.length; j++) {
 
         if(this.createData.items[j].summary !== "Instruments in the Redeemers Hands") {
-
               delete this.createData.items[j];
         } else if(this.createData.items[j].status == 'cancelled') {
             delete this.createData.items[j];
