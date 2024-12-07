@@ -12,6 +12,7 @@ import { HpcComponent } from './website/hpc/hpc.component';
 import { IrhComponent } from './website/irh/irh.component';
 import { HnhComponent } from './website/hnh/hnh.component';
 import { MnpComponent } from './website/mnp/mnp.component';
+import { CcefComponent } from './website/ccef/ccef.component';
 
 const routes: Routes = [
   { path: '',         component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'irh',         component: IrhComponent },
   { path: 'hnh',         component: HnhComponent },
   { path: 'mnp',         component: MnpComponent },
+  { path: 'ccef-bcti',         component: CcefComponent },
 ];
 
 @NgModule({

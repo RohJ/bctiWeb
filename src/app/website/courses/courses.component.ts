@@ -59,7 +59,14 @@ export class CoursesComponent implements OnInit, OnDestroy {
         // console.log('Date - ' + this.createData.items[j].start.date);
         // console.log('DateTime - ' + this.createData.items[j].start.dateTime);
 
-        if(this.createData.items[j].status == 'cancelled') {
+        if(this.createData.items[j].summary !== "How People Change") {
+          if (this.createData.items[j].summary !== "Instruments in the Redeemers Hands") {
+            if(this.createData.items[j].summary !== "Marriage and Parenting") {
+              if(this.createData.items[j].summary !== "Health and Healing") {
+                if(this.createData.items[j].summary !== "Dynamics of Biblical Change") {
+                  if(this.createData.items[j].summary !== "Helping Relationships") {
+                delete this.createData.items[j];
+        } } } } } } else if(this.createData.items[j].status == 'cancelled') {
             delete this.createData.items[j];
         }else if(this.createData.items[j].start.date) {
           this.startDate = Date.parse(this.createData.items[j].start.date);

@@ -15,14 +15,6 @@
               </div>
             </button>
           </div>
-          <!-- <div class="col d-flex justify-content-center">
-            <button class="card card_header card-pop"  style= "align-items: center;" [routerLink]="['/alumni']">
-              <span class="text-center" style="font-size:8em; color: #6CAB72;"><i class="bi bi-gear-fill"></i></span>
-              <div class="card-body" style="margin-top: -1em;">
-                <p class="card-title text-center">I am here for<br><h4>Training</h4></p>
-              </div>
-            </button>
-          </div> -->
           <div class="col d-flex justify-content-center">
             <button class="card card_header card-pop"  style= "align-items: center;" [routerLink]="['/courses']">
               <span class="text-center" style="font-size:8em; color: #1a74cd;"><i class="bi bi-person-workspace"></i></span>
@@ -49,7 +41,7 @@
         <h2 class="text-start space" style="color: #7F6A4F;">Our Mission</h2>
         <p class="text-start">We are living in troubled times and the journey we are going through, is often unkind.</p>
         <p class="text-start space">It is God’s desire that we discover the power of His comfort, healing and restoration in the shelter of genuine, authentic and caring relationships.</p>
-        <a type="button" class="btn text-white" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Explore Our Mission</a>
+        <a type="button" class="btn text-white" [routerLink]="['/about']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Explore Our Mission</a>
       </div>
     </div>
   </div>
@@ -280,16 +272,20 @@
             <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
             <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
             <img *ngIf="items.summary =='Marriage and Parenting'" src="assets/img/landing/mnp.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='Dynamics of Biblical Change'" src="assets/img/ccef/ccef_dbc.webp" class="card-img-top img-fluid rounded" alt="...">
+            <img *ngIf="items.summary =='Helping Relationships'" src="assets/img/ccef/ccef_hr.webp" class="card-img-top img-fluid rounded" alt="...">
             <div  class="mt-4">
               <h6 class="card-title">{{items.summary }}</h6>
               <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
               <h6 class="card-title">Time: <span style="font-weight: 400;">{{ items.sdate | date:'shortTime' }}</span></h6>
               <p style="white-space: pre-line">{{ items.description }}</p>
             </div>
-            <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://irh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://hpc.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='Health and Healing'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://hnh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://mnp.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" [routerLink]="['/irh']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" [routerLink]="['/hpc']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Health and Healing'" type="button" class="btn text-white mt-3"[routerLink]="['/hnh']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" class="btn text-white mt-3" [routerLink]="['/mnp']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Dynamics of Biblical Change'" type="button" class="btn text-white mt-3" [routerLink]="['/ccef-bcti']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Helping Relationships'" type="button" class="btn text-white mt-3" [routerLink]="['/ccef-bcti']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
           </div>
         </div>
       </div>
@@ -331,8 +327,8 @@
 </div>
 </div> -->
 <!--Frequently Asked Questions-->
-<div class="container-fluid" style="background-color: #FFFCF0; margin-top: -3em;">
-  <div class="container">
+<div class="container-fluid" style="background-color: #FFFCF0; margin-top: -3em; padding-left: 0px !important; padding-right: 0px !important;">
+  <div class="container" style="padding-left: 0px !important; padding-right: 0px !important;">
     <h2 class="text-start space" style="color: #7F6A4F;">Frequently Asked Questions</h2>
 
     <div class="accordion" id="faq">
@@ -385,15 +381,15 @@
       <div class="text_testimony mx-md-5 mx-auto">
         <div class="position-relative ">
         <div data-glide-el="controls">
-          <button class="position-absolute" style="background-color: transparent; border: 0px; left: 10%; top: 9em; z-index: 1000; color: #7F6A4F;" data-glide-dir="<"><h2><i class="bi bi-arrow-left-circle"></i></h2></button>
-          <button class="position-absolute" style="background-color: transparent; border: 0px; right: 10%; top: 9em; z-index: 1000; color: #7F6A4F;" data-glide-dir=">"><h2><i class="bi bi-arrow-right-circle"></i></h2></button>
+          <button class="position-absolute" style="background-color: transparent; border: 0px; left: 4%; top: 9em; z-index: 1000; color: #7F6A4F;" data-glide-dir="<"><h2><i class="bi bi-arrow-left-circle"></i></h2></button>
+          <button class="position-absolute" style="background-color: transparent; border: 0px; right: 4%; top: 9em; z-index: 1000; color: #7F6A4F;" data-glide-dir=">"><h2><i class="bi bi-arrow-right-circle"></i></h2></button>
         </div>
       </div>
         <div data-glide-el="track" class="glide__track">
           <ul class="glide__slides">
             <li class="glide__slide">
               <div class="container card text-center">
-                <img src="assets/img/landing/testimony_pic.png" class="card-img-top mx-auto mt-4" alt="..." style="width: 105px;">
+                <!-- <img src="assets/img/landing/testimony_pic.png" class="card-img-top mx-auto mt-4" alt="..." style="width: 105px;"> -->
                 <div class="card-body testimony-background-quotes mx-auto">
                   <!-- <h5 class="card-title">Testimony 2</h5> -->
                   <p class="card-text my-3 mx-md-5">“I am a professor and I kept hearing that I need to listen. I came here to change my kids but I learned that I need to change! The best part was that there were no sermons and it’s all discussions and asking questions which was the best thing about this course.”</p>
@@ -404,7 +400,7 @@
             </li>
             <li class="glide__slide">
               <div class="container card text-center">
-                <img src="assets/img/landing/testimony_pic.png" class="card-img-top mx-auto mt-4" alt="..." style="width: 105px;">
+                <!-- <img src="assets/img/landing/testimony_pic.png" class="card-img-top mx-auto mt-4" alt="..." style="width: 105px;"> -->
                 <div class="card-body testimony-background-quotes mx-auto">
                   <!-- <h5 class="card-title">Testimony 2</h5> -->
                   <p class="card-text my-3  mx-md-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
@@ -415,7 +411,7 @@
             </li>
             <li class="glide__slide">
               <div class="container card text-center">
-                <img src="assets/img/landing/testimony_pic.png" class="card-img-top mx-auto mt-4" alt="..." style="width: 105px;">
+                <!-- <img src="assets/img/landing/testimony_pic.png" class="card-img-top mx-auto mt-4" alt="..." style="width: 105px;"> -->
                 <div class="card-body testimony-background-quotes mx-auto">
                   <!-- <h5 class="card-title">Testimony 2</h5> -->
                   <p class="card-text my-3  mx-md-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
@@ -432,8 +428,8 @@
   </div>
  </div>
 <!--Contact Form-->
-<div class="container-fluid" style="background-color: #FFFCF0;">
-  <div class="container">
+<div class="container-fluid" style="background-color: #FFFCF0; padding-left: 0px !important; padding-right: 0px !important;">
+  <div class="container" style="padding-left: 0px !important; padding-right: 0px !important;">
     <div class="row flex-sm-row-reverse" >
       <div class="col-md-6 mb-4">
         <div class="card shadow-none">

@@ -21,6 +21,7 @@ import { HpcComponent } from './website/hpc/hpc.component';
 import { IrhComponent } from './website/irh/irh.component';
 import { HnhComponent } from './website/hnh/hnh.component';
 import { MnpComponent } from './website/mnp/mnp.component';
+import { CcefComponent } from './website/ccef/ccef.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MnpComponent } from './website/mnp/mnp.component';
     HpcComponent,
     IrhComponent,
     HnhComponent,
-    MnpComponent
+    MnpComponent,
+    CcefComponent
   ],
   imports: [
     BrowserModule,

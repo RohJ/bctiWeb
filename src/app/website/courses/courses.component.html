@@ -54,14 +54,14 @@
             <h2 class="text-start space" style="color: #7F6A4F;">CCEF-BCTI Courses</h2>
             <div class="col-md-6 spacer">
               <div class="ratio ratio-16x9">
-                <img src="https://placehold.co/640x360" alt="" class="rounded pb-3">
+                <img src="assets/img/ccef/ccefnn.webp" alt="" class="img-fluid rounded pb-3">
               </div>
             </div>
             <div class="col-md-6">
               <!-- <h2 class="text-start spacer" style="color: #7F6A4F;">CCEF-BCTI Courses</h2> -->
               <p class="text-start">BCTI partners with the Christian Counseling & Educational Foundation (CCEF)* to provide biblical counselling courses in India at a discounted rate.</p>
               <p class="text-start">These online courses provide a solid biblical foundation for understanding God, yourself, and others, making them invaluable for anyone involved in ministry or counselling.</p>
-              <a type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://bcti-ccef.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+              <a type="button" class="btn text-white mt-3" [routerLink]="['/ccef-bcti']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
             </div>
           </div>
     </div>
@@ -87,7 +87,7 @@
 </div>
 
 <!--Upcoming Events-->
-<div class="container-fluid" style="background-color: #D2D8BE;">
+<div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
     <h2 class="text-start space" style="color: #7F6A4F;">Upcoming Events</h2>
   <!--Row Cols-->
@@ -100,16 +100,20 @@
             <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
             <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
             <img *ngIf="items.summary =='Marriage and Parenting'" src="assets/img/landing/mnp.webp" class="card-img-top rounded" alt="...">
+            <img *ngIf="items.summary =='Dynamics of Biblical Change'" src="assets/img/ccef/ccef_dbc.webp" class="card-img-top img-fluid rounded" alt="...">
+            <img *ngIf="items.summary =='Helping Relationships'" src="assets/img/ccef/ccef_hr.webp" class="card-img-top img-fluid rounded" alt="...">
             <div  class="mt-4">
               <h6 class="card-title">{{items.summary }}</h6>
               <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
               <h6 class="card-title">Time: <span style="font-weight: 400;">{{ items.sdate | date:'shortTime' }}</span></h6>
               <p style="white-space: pre-line">{{ items.description }}</p>
             </div>
-            <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://irh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" target="_blank" rel="noreferrer noopener" href="https://hpc.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='Health and Healing'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://hnh.bcti.org.in/" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
-            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" target="_blank" rel="noreferrer noopener" class="btn text-white mt-3" href="https://mnp.bcti.org.in//" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Instruments in the Redeemers Hands'" type="button" class="btn text-white mt-3" [routerLink]="['/irh']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='How People Change'" type="button" class="btn text-white mt-3" [routerLink]="['/hpc']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Health and Healing'" type="button" class="btn text-white mt-3"[routerLink]="['/hnh']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Marriage and Parenting'" type="button" class="btn text-white mt-3" [routerLink]="['/mnp']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Dynamics of Biblical Change'" type="button" class="btn text-white mt-3" [routerLink]="['/ccef-bcti']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
+            <a *ngIf="items.summary =='Helping Relationships'" type="button" class="btn text-white mt-3" [routerLink]="['/ccef-bcti']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
           </div>
         </div>
       </div>
@@ -157,7 +161,7 @@
 </div>
 
 <!--Contact Form-->
-<div class="container-fluid" style="background-color: #FFFCF0;">
+<div class="container-fluid" style="background-color: #D2D8BE;">
   <div class="container">
     <div class="row flex-sm-row-reverse" >
       <div class="col-md-6 mb-4">
