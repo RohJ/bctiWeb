@@ -22,6 +22,11 @@ import { IrhComponent } from './website/irh/irh.component';
 import { HnhComponent } from './website/hnh/hnh.component';
 import { MnpComponent } from './website/mnp/mnp.component';
 import { CcefComponent } from './website/ccef/ccef.component';
+import { HindicoursesComponent } from './website/hindicourses/hindicourses.component';
+import { HpchindiComponent } from './website/hpchindi/hpchindi.component';
+import { IrhhindiComponent } from './website/irhhindi/irhhindi.component';
+import { HnhhindiComponent } from './website/hnhhindi/hnhhindi.component';
+import { MnphindiComponent } from './website/mnphindi/mnphindi.component';
 
 
 @NgModule({
@@ -40,7 +45,12 @@ import { CcefComponent } from './website/ccef/ccef.component';
     IrhComponent,
     HnhComponent,
     MnpComponent,
-    CcefComponent
+    CcefComponent,
+    HindicoursesComponent,
+    HpchindiComponent,
+    IrhhindiComponent,
+    HnhhindiComponent,
+    MnphindiComponent
   ],
   imports: [
     BrowserModule,

@@ -3,16 +3,16 @@ import { UserService } from 'src/app/_services/user.service';
 import Glide from '@glidejs/glide';
 
 @Component({
-  selector: 'app-hnh',
-  templateUrl: './hnh.component.html',
-  styleUrl: './hnh.component.scss'
+  selector: 'app-hnhhindi',
+  templateUrl: './hnhhindi.component.html',
+  styleUrl: './hnhhindi.component.scss'
 })
-export class HnhComponent implements OnInit, OnDestroy {
+export class HnhhindiComponent implements OnInit, OnDestroy {
 
   todayDate : number = Date.now();
   startDate : number = 0;
 
-  createDataHnhHindi:any = [];
+  createData:any = [];
   myArray:any = [];
   sortedArray:any =[];
 
@@ -27,7 +27,7 @@ export class HnhComponent implements OnInit, OnDestroy {
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('custom-class');
 
-    new Glide(".testimony_cards_hnh", {
+    new Glide(".testimony_cards_hnh_hindi", {
       type: "carousel",
       startAt: 0,
       focusAt: 0,
@@ -56,25 +56,25 @@ export class HnhComponent implements OnInit, OnDestroy {
     this.userAccess.getEvents()
     .subscribe({
       next: (data) => {
-      this.createDataHnhHindi = data;
+      this.createData = data;
 
       //  console.log(this.createData);
       // console.log('Length - ' + this.createData.items.length);
 
-      for (let j = 0; j < this.createDataHnhHindi.items.length; j++) {
+      for (let j = 0; j < this.createData.items.length; j++) {
 
-        if(this.createDataHnhHindi.items[j].summary !== "स्वास्थ्य और चंगाई") {
+        if(this.createData.items[j].summary !== "Health and Healing") {
 
-              delete this.createDataHnhHindi.items[j];
-        } else if(this.createDataHnhHindi.items[j].status == 'cancelled') {
-            delete this.createDataHnhHindi.items[j];
-        } else if(this.createDataHnhHindi.items[j].start.date) {
-          this.startDate = Date.parse(this.createDataHnhHindi.items[j].start.date);
+              delete this.createData.items[j];
+        } else if(this.createData.items[j].status == 'cancelled') {
+            delete this.createData.items[j];
+        } else if(this.createData.items[j].start.date) {
+          this.startDate = Date.parse(this.createData.items[j].start.date);
           // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
           if (this.startDate < this.todayDate) {
             // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
-            delete this.createDataHnhHindi.items[j];
-            this.myArray.push({ summary: this.createDataHnhHindi.items[j].summary, sdate: this.createDataHnhHindi.items[j].start.date, description: this.createDataHnhHindi.items[j].description });
+            delete this.createData.items[j];
+            this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.date, description: this.createData.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
           }
         }
@@ -88,15 +88,15 @@ export class HnhComponent implements OnInit, OnDestroy {
       // console.log(this.createData);
       // console.log('Length - ' + this.createData.items.length);
 
-      let keyArr: any[] = Object.keys(this.createDataHnhHindi.items)
+      let keyArr: any[] = Object.keys(this.createData.items)
       keyArr.forEach((key: any) => {
         // console.log(this.createData.items[key].summary)
         // push object with abbreviation, price and coin to array
-        if(this.createDataHnhHindi.items[key].start.dateTime){
-          this.myArray.push({ summary: this.createDataHnhHindi.items[key].summary, sdate: this.createDataHnhHindi.items[key].start.dateTime, description: this.createDataHnhHindi.items[key].description  });
+        if(this.createData.items[key].start.dateTime){
+          this.myArray.push({ summary: this.createData.items[key].summary, sdate: this.createData.items[key].start.dateTime, description: this.createData.items[key].description  });
           // console.log(this.myArray);
-        } else if(this.createDataHnhHindi.items[key].start.date){
-          this.myArray.push({ summary: this.createDataHnhHindi.items[key].summary, sdate: this.createDataHnhHindi.items[key].start.date, description: this.createDataHnhHindi.items[key].description  });
+        } else if(this.createData.items[key].start.date){
+          this.myArray.push({ summary: this.createData.items[key].summary, sdate: this.createData.items[key].start.date, description: this.createData.items[key].description  });
           // console.log(this.myArray);
         }
       });
@@ -117,7 +117,7 @@ export class HnhComponent implements OnInit, OnDestroy {
       console.log(this.sortedArray);
     },
       error: (err) => {
-      this.createDataHnhHindi = JSON.parse(err.error).message;
+      this.createData = JSON.parse(err.error).message;
       console.log(JSON.parse(err.error).message);
       }
     });

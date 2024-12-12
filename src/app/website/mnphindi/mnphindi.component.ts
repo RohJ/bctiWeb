@@ -3,16 +3,16 @@ import { UserService } from 'src/app/_services/user.service';
 import Glide from '@glidejs/glide';
 
 @Component({
-  selector: 'app-hnh',
-  templateUrl: './hnh.component.html',
-  styleUrl: './hnh.component.scss'
+  selector: 'app-mnphindi',
+  templateUrl: './mnphindi.component.html',
+  styleUrl: './mnphindi.component.scss'
 })
-export class HnhComponent implements OnInit, OnDestroy {
+export class MnphindiComponent implements OnInit, OnDestroy {
 
   todayDate : number = Date.now();
   startDate : number = 0;
 
-  createDataHnhHindi:any = [];
+  createDataMnpHindi:any = [];
   myArray:any = [];
   sortedArray:any =[];
 
@@ -27,7 +27,7 @@ export class HnhComponent implements OnInit, OnDestroy {
     var body = document.getElementsByTagName('body')[0];
     body.classList.add('custom-class');
 
-    new Glide(".testimony_cards_hnh", {
+    new Glide(".testimony_cards_mnp_hindi", {
       type: "carousel",
       startAt: 0,
       focusAt: 0,
@@ -56,25 +56,25 @@ export class HnhComponent implements OnInit, OnDestroy {
     this.userAccess.getEvents()
     .subscribe({
       next: (data) => {
-      this.createDataHnhHindi = data;
+      this.createDataMnpHindi = data;
 
       //  console.log(this.createData);
       // console.log('Length - ' + this.createData.items.length);
 
-      for (let j = 0; j < this.createDataHnhHindi.items.length; j++) {
+      for (let j = 0; j < this.createDataMnpHindi.items.length; j++) {
 
-        if(this.createDataHnhHindi.items[j].summary !== "स्वास्थ्य और चंगाई") {
+        if(this.createDataMnpHindi.items[j].summary !== "विवाह और परवरिश") {
 
-              delete this.createDataHnhHindi.items[j];
-        } else if(this.createDataHnhHindi.items[j].status == 'cancelled') {
-            delete this.createDataHnhHindi.items[j];
-        } else if(this.createDataHnhHindi.items[j].start.date) {
-          this.startDate = Date.parse(this.createDataHnhHindi.items[j].start.date);
+              delete this.createDataMnpHindi.items[j];
+        } else if(this.createDataMnpHindi.items[j].status == 'cancelled') {
+            delete this.createDataMnpHindi.items[j];
+        } else if(this.createDataMnpHindi.items[j].start.date) {
+          this.startDate = Date.parse(this.createDataMnpHindi.items[j].start.date);
           // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
           if (this.startDate < this.todayDate) {
             // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
-            delete this.createDataHnhHindi.items[j];
-            this.myArray.push({ summary: this.createDataHnhHindi.items[j].summary, sdate: this.createDataHnhHindi.items[j].start.date, description: this.createDataHnhHindi.items[j].description });
+            delete this.createDataMnpHindi.items[j];
+            this.myArray.push({ summary: this.createDataMnpHindi.items[j].summary, sdate: this.createDataMnpHindi.items[j].start.date, description: this.createDataMnpHindi.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
           }
         }
@@ -88,15 +88,15 @@ export class HnhComponent implements OnInit, OnDestroy {
       // console.log(this.createData);
       // console.log('Length - ' + this.createData.items.length);
 
-      let keyArr: any[] = Object.keys(this.createDataHnhHindi.items)
+      let keyArr: any[] = Object.keys(this.createDataMnpHindi.items)
       keyArr.forEach((key: any) => {
         // console.log(this.createData.items[key].summary)
         // push object with abbreviation, price and coin to array
-        if(this.createDataHnhHindi.items[key].start.dateTime){
-          this.myArray.push({ summary: this.createDataHnhHindi.items[key].summary, sdate: this.createDataHnhHindi.items[key].start.dateTime, description: this.createDataHnhHindi.items[key].description  });
+        if(this.createDataMnpHindi.items[key].start.dateTime){
+          this.myArray.push({ summary: this.createDataMnpHindi.items[key].summary, sdate: this.createDataMnpHindi.items[key].start.dateTime, description: this.createDataMnpHindi.items[key].description  });
           // console.log(this.myArray);
-        } else if(this.createDataHnhHindi.items[key].start.date){
-          this.myArray.push({ summary: this.createDataHnhHindi.items[key].summary, sdate: this.createDataHnhHindi.items[key].start.date, description: this.createDataHnhHindi.items[key].description  });
+        } else if(this.createDataMnpHindi.items[key].start.date){
+          this.myArray.push({ summary: this.createDataMnpHindi.items[key].summary, sdate: this.createDataMnpHindi.items[key].start.date, description: this.createDataMnpHindi.items[key].description  });
           // console.log(this.myArray);
         }
       });
@@ -117,7 +117,7 @@ export class HnhComponent implements OnInit, OnDestroy {
       console.log(this.sortedArray);
     },
       error: (err) => {
-      this.createDataHnhHindi = JSON.parse(err.error).message;
+      this.createDataMnpHindi = JSON.parse(err.error).message;
       console.log(JSON.parse(err.error).message);
       }
     });
