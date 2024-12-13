@@ -63,7 +63,7 @@ export class HnhhindiComponent implements OnInit, OnDestroy {
 
       for (let j = 0; j < this.createData.items.length; j++) {
 
-        if(this.createData.items[j].summary !== "Health and Healing") {
+        if(this.createData.items[j].summary !== "स्वास्थ्य और चंगाई") {
 
               delete this.createData.items[j];
         } else if(this.createData.items[j].status == 'cancelled') {
