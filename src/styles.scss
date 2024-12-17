@@ -47,9 +47,14 @@ h6 {
 
 p {
   font-size: 18px !important;
-  line-height: 23px !important;
+  // line-height: 23px !important;
+  line-height: 1.5em !important;
   font-weight: 400 !important;
   color: #454545;
+}
+
+.hindi {
+  line-height: 1.7em !important;
 }
 
 .page-header {

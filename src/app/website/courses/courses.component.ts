@@ -26,6 +26,14 @@ export class CoursesComponent implements OnInit, OnDestroy {
   myArray:any = [];
   sortedArray:any =[];
 
+  createDataCCEF:any = [];
+  myArrayCCEF:any = [];
+  sortedArrayCCEF:any =[];
+
+  createDataHindi:any = [];
+  myArrayHindi:any = [];
+  sortedArrayHindi:any =[];
+
   summary ='';
   sdate='';
   description='';
@@ -43,7 +51,6 @@ export class CoursesComponent implements OnInit, OnDestroy {
         phone: [null, [Validators.required, Validators.pattern("^[0-9]{10}$")]],
         email: [null, [Validators.required, Validators.email]],
         message: [null, [Validators.required]]
-
       }
     );
 
@@ -52,8 +59,8 @@ export class CoursesComponent implements OnInit, OnDestroy {
       next: (data) => {
       this.createData = data;
 
-      console.log(this.createData);
-      console.log('Length - ' + this.createData.items.length);
+      // console.log(this.createData);
+      // console.log('Length - ' + this.createData.items.length);
 
       for (let j = 0; j < this.createData.items.length; j++) {
         // console.log('Date - ' + this.createData.items[j].start.date);
@@ -63,10 +70,8 @@ export class CoursesComponent implements OnInit, OnDestroy {
           if (this.createData.items[j].summary !== "Instruments in the Redeemers Hands") {
             if(this.createData.items[j].summary !== "Marriage and Parenting") {
               if(this.createData.items[j].summary !== "Health and Healing") {
-                if(this.createData.items[j].summary !== "Dynamics of Biblical Change") {
-                  if(this.createData.items[j].summary !== "Helping Relationships") {
                 delete this.createData.items[j];
-        } } } } } } else if(this.createData.items[j].status == 'cancelled') {
+        } } } } else if(this.createData.items[j].status == 'cancelled') {
             delete this.createData.items[j];
         }else if(this.createData.items[j].start.date) {
           this.startDate = Date.parse(this.createData.items[j].start.date);
@@ -108,15 +113,161 @@ export class CoursesComponent implements OnInit, OnDestroy {
       this.sortedArray = this.myArray.sort((a: any, b: any) => {
         return <any>new Date(a.sdate) - <any>new Date(b.sdate);
       });
-      console.log(this.sortedArray);
+      // console.log(this.sortedArray);
 
        for (let i = 0; i < 3; i++) {
         // console.log(this.createData);
-        // console.log(this.createData.items[i].summary + '  ' + this.createData.items[i].start.date);
+        //console.log(this.createData.items[i].summary + '  ' + this.createData.items[i].start.date);
       }
     },
       error: (err) => {
       this.createData = JSON.parse(err.error).message;
+      console.log(JSON.parse(err.error).message);
+      }
+    });
+
+    //CCEF Events
+
+    this.userAccess.getEvents()
+    .subscribe({
+      next: (data) => {
+      this.createDataCCEF = data;
+
+      // console.log(this.createData);
+      // console.log('Length - ' + this.createData.items.length);
+
+      for (let j = 0; j < this.createDataCCEF.items.length; j++) {
+        // console.log('Date - ' + this.createData.items[j].start.date);
+        // console.log('DateTime - ' + this.createData.items[j].start.dateTime);
+
+        if(this.createDataCCEF.items[j].summary !== "Dynamics of Biblical Change") {
+          if(this.createDataCCEF.items[j].summary !== "Helping Relationships") {
+                delete this.createDataCCEF.items[j];
+        } } else if(this.createDataCCEF.items[j].status == 'cancelled') {
+            delete this.createDataCCEF.items[j];
+        }else if(this.createDataCCEF.items[j].start.date) {
+          this.startDate = Date.parse(this.createDataCCEF.items[j].start.date);
+          // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
+          if (this.startDate < this.todayDate) {
+            // console.log('Filtered Data ' + this.createDataCCEF.items[j].summary + '  ' + this.createDataCCEF.items[j].start.date);
+            delete this.createDataCCEF.items[j];
+            this.myArrayCCEF.push({ summary: this.createDataCCEF.items[j].summary, sdate: this.createDataCCEF.items[j].start.date, description: this.createDataCCEF.items[j].description });
+            // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
+          }
+        } else if(this.createDataCCEF.items[j].start.dateTime) {
+            this.startDate = Date.parse(this.createDataCCEF.items[j].start.dateTime);
+            // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
+            if (this.startDate < this.todayDate) {
+            // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+            delete this.createData.items[j];
+            this.myArrayCCEF.push({ summary: this.createDataCCEF.items[j].summary, sdate: this.createDataCCEF.items[j].start.dateTime, description: this.createDataCCEF.items[j].description });
+            // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+            }
+        }
+      }
+
+      // console.log(this.createData);
+      // console.log('Length - ' + this.createData.items.length);
+
+      let keyArr: any[] = Object.keys(this.createDataCCEF.items)
+      keyArr.forEach((key: any) => {
+        // console.log(this.createData.items[key].summary)
+        // push object with abbreviation, price and coin to array
+        if(this.createDataCCEF.items[key].start.dateTime){
+          this.myArrayCCEF.push({ summary: this.createDataCCEF.items[key].summary, sdate: this.createDataCCEF.items[key].start.dateTime, description: this.createDataCCEF.items[key].description  });
+          // console.log(this.myArray);
+        } else if(this.createDataCCEF.items[key].start.date){
+          this.myArrayCCEF.push({ summary: this.createDataCCEF.items[key].summary, sdate: this.createDataCCEF.items[key].start.date, description: this.createDataCCEF.items[key].description  });
+          // console.log(this.myArray);
+        }
+      });
+      // ASC
+      this.sortedArrayCCEF = this.myArrayCCEF.sort((a: any, b: any) => {
+        return <any>new Date(a.sdate) - <any>new Date(b.sdate);
+      });
+      // console.log(this.sortedArrayCCEF);
+
+       for (let i = 0; i < 3; i++) {
+        // console.log(this.createData);
+        //console.log(this.createData.items[i].summary + '  ' + this.createData.items[i].start.date);
+      }
+    },
+      error: (err) => {
+      this.createDataCCEF = JSON.parse(err.error).message;
+      console.log(JSON.parse(err.error).message);
+      }
+    });
+
+    //Hindi Events
+
+    this.userAccess.getEvents()
+    .subscribe({
+      next: (data) => {
+      this.createDataHindi = data;
+
+      // console.log(this.createData);
+      // console.log('Length - ' + this.createData.items.length);
+
+      for (let j = 0; j < this.createDataHindi.items.length; j++) {
+        // console.log('Date - ' + this.createData.items[j].start.date);
+        // console.log('DateTime - ' + this.createData.items[j].start.dateTime);
+
+        if(this.createDataHindi.items[j].summary !== "लोग कैसे बदलते है") {
+          if(this.createDataHindi.items[j].summary !== "परिवर्तन के उपकरण") {
+            if(this.createDataHindi.items[j].summary !== "स्वास्थ्य और चंगाई") {
+              if(this.createDataHindi.items[j].summary !== "विवाह और परवरिश") {
+                delete this.createDataHindi.items[j];
+        } } } } else if(this.createDataHindi.items[j].status == 'cancelled') {
+            delete this.createDataHindi.items[j];
+        }else if(this.createDataHindi.items[j].start.date) {
+          this.startDate = Date.parse(this.createDataHindi.items[j].start.date);
+          // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
+          if (this.startDate < this.todayDate) {
+            // console.log('Filtered Data ' + this.createDataHindi.items[j].summary + '  ' + this.createDataHindi.items[j].start.date);
+            delete this.createDataHindi.items[j];
+            this.myArrayHindi.push({ summary: this.createDataHindi.items[j].summary, sdate: this.createDataHindi.items[j].start.date, description: this.createDataHindi.items[j].description });
+            // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
+          }
+        } else if(this.createDataHindi.items[j].start.dateTime) {
+            this.startDate = Date.parse(this.createDataHindi.items[j].start.dateTime);
+            // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
+            if (this.startDate < this.todayDate) {
+            // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+            delete this.createDataHindi.items[j];
+            this.myArrayHindi.push({ summary: this.createDataHindi.items[j].summary, sdate: this.createDataHindi.items[j].start.dateTime, description: this.createDataHindi.items[j].description });
+            // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+            }
+        }
+      }
+
+      // console.log(this.createData);
+      // console.log('Length - ' + this.createData.items.length);
+
+      let keyArr: any[] = Object.keys(this.createDataHindi.items)
+      keyArr.forEach((key: any) => {
+        // console.log(this.createData.items[key].summary)
+        // push object with abbreviation, price and coin to array
+        if(this.createDataHindi.items[key].start.dateTime){
+          this.myArrayHindi.push({ summary: this.createDataHindi.items[key].summary, sdate: this.createDataHindi.items[key].start.dateTime, description: this.createDataHindi.items[key].description  });
+          // console.log(this.myArray);
+        } else if(this.createDataCCEF.items[key].start.date){
+          this.myArrayHindi.push({ summary: this.createDataHindi.items[key].summary, sdate: this.createDataHindi.items[key].start.date, description: this.createDataHindi.items[key].description  });
+          // console.log(this.myArray);
+        }
+      });
+      // ASC
+      this.sortedArrayHindi = this.myArrayHindi.sort((a: any, b: any) => {
+        return <any>new Date(a.sdate) - <any>new Date(b.sdate);
+      });
+      // console.log(this.sortedArrayHindi);
+
+       for (let i = 0; i < 3; i++) {
+        // console.log(this.createData);
+        //console.log(this.createData.items[i].summary + '  ' + this.createData.items[i].start.date);
+      }
+    },
+      error: (err) => {
+      this.createDataCCEF = JSON.parse(err.error).message;
       console.log(JSON.parse(err.error).message);
       }
     });
