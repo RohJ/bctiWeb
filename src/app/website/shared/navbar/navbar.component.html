@@ -173,11 +173,11 @@
             About Us
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
-            <li><a class="dropdown-item" [routerLink]="['/about']">Our Vision</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/about']" fragment="vision">Our Vision</a></li>
+            <li><hr class="dropdown-divider" ></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/about']" fragment="beliefs">Our Values</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/about']">Our Beliefs</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/about']">Our Team</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/about']" fragment="team">Our Team</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -185,11 +185,11 @@
             Counseling
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownCounseling">
-            <li><a class="dropdown-item" [routerLink]="['/counseling']">Biblical counselling</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/counseling']" fragment="counseling">Biblical counselling</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/counseling']">Book an apointment</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/counseling']" fragment="booking">Book an apointment</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/counseling']">Coaching Sessions</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/counseling']" fragment="coaching">Coaching Sessions</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -197,13 +197,13 @@
             Courses
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownCourses">
-            <li><a class="dropdown-item" [routerLink]="['/courses']" fragment="englishCourses">Overview</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/courses']" fragment="englishCourses">Overview</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/engcourses']" fragment="englishCourses">English Courses</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/engcourses']" fragment="englishCourses">English Courses</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/ccef-bcti']">CCEF-BCTI Courses</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/ccef-bcti']">CCEF-BCTI Courses</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/hindi-courses']">Hindi Courses</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/hindi-courses']">Hindi Courses</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -213,19 +213,19 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownParticipate">
             <!-- <li><a class="dropdown-item" [routerLink]="['/alumni']">Donate</a></li>
             <li><hr class="dropdown-divider"></li> -->
-            <li><a class="dropdown-item" [routerLink]="['/alumni']">Alumini</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/alumni']">Alumini</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" [routerLink]="['/alumni']">Mentoring</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/alumni']">Mentoring</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" target="_blank" rel="noreferrer noopener" href="https://forthetruth.in/">Resources</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/calendar']">Calendar</a>
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/calendar']">Calendar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+          <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" [routerLink]="['/contact']">Contact Us</a>
         </li>
       </ul>
     </div>
