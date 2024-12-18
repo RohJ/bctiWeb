@@ -30,7 +30,7 @@
 <div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
     <div class="row flex-sm-row-reverse" >
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6 mb-4 text-center">
         <img src="assets/img/courses/bcti_logo_lg.webp" alt="" class="rounded img-fluid pb-3" style="margin-left: -12px; max-height: 300px !important;">
         <!-- <div class="ratio ratio-16x9">
           <iframe preload="none" class="absolute inset-0 z-10 h-full w-full object-cover focus:outline-none" src="https://videocdn.cdnpk.net/videos/5bda907d-74ba-4de7-82b0-e512e44d88ce/horizontal/previews/videvo_watermarked/large.mp4" type="video/mp4"></iframe>
@@ -240,15 +240,14 @@
 
     <h3 style="font-weight: 600 !important;">English Courses</h3>
     <!--Row Cols-->
-    <div class="row space" style="align-items: center;">
+    <div class="row space">
       <div *ngFor="let items of sortedArray; let i = index"  class="col-md-6">
-        <div >
-          <div>
+
             <div *ngIf="i < 2" class="card" style="background-color: transparent; border: none; margin-top: 3rem;">
-              <img *ngIf="items.summary =='Instruments in the Redeemers Hands'" src="assets/img/landing/irh_title.webp" class="card-img-top rounded" alt="...">
-              <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
-              <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
-              <img *ngIf="items.summary =='Marriage and Parenting'" src="assets/img/landing/mnp.webp" class="card-img-top rounded" alt="...">
+              <img *ngIf="items.summary =='Instruments in the Redeemers Hands'" src="assets/img/landing/irh_title.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="items.summary =='Marriage and Parenting'" src="assets/img/landing/mnp.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
               <div  class="mt-4">
                 <h6 class="card-title">{{items.summary }}</h6>
                 <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
@@ -260,8 +259,7 @@
               <a *ngIf="items.summary =='Health and Healing'" type="button" class="btn btn-success mt-3"[routerLink]="['/hnh']" style="font-size: medium; width: 200px;">Know More</a>
               <a *ngIf="items.summary =='Marriage and Parenting'" type="button" class="btn btn-success mt-3" [routerLink]="['/mnp']" style="font-size: medium; width: 200px;">Know More</a>
             </div>
-          </div>
-        </div>
+
       </div>
     </div>
     <hr class="space">
@@ -269,7 +267,7 @@
     <!-- CCEF Courses -->
     <h3 style="font-weight: 600 !important;">CCEF Courses</h3>
     <!--Row Cols-->
-    <div class="row space" style="align-items: center;">
+    <div class="row space">
       <div *ngFor="let item of sortedArrayCCEF; let l = index" class="col-md-6">
             <div *ngIf="l < 2" class="card " style="background-color: transparent; border: none; margin-top: 3rem;">
               <img *ngIf="item.summary =='Dynamics of Biblical Change'" src="assets/img/ccef/ccef_dbc_1.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
@@ -289,13 +287,13 @@
     <!-- Hindi Courses -->
     <h3 style="font-weight: 600 !important;">Hindi Courses</h3>
     <!--Row Cols-->
-    <div class="row space" style="align-items: center;">
+    <div class="row space">
       <div *ngFor="let items of sortedArrayHindi; let k = index" class="col-md-6">
             <div *ngIf="k < 2" class="card" style="background-color: transparent; border: none; margin-top: 3rem;">
-              <img *ngIf="items.summary =='परिवर्तन के उपकरण'" src="assets/img/landing/irh_title.webp" class="card-img-top rounded" alt="...">
-              <img *ngIf="items.summary =='लोग कैसे बदलते है'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
-              <img *ngIf="items.summary =='स्वास्थ्य और चंगाई'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
-              <img *ngIf="items.summary =='विवाह और परवरिश'" src="assets/img/landing/mnp.webp" class="card-img-top rounded" alt="...">
+              <img *ngIf="items.summary =='परिवर्तन के उपकरण'" src="assets/img/landing/irh_title.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="items.summary =='लोग कैसे बदलते है'" src="assets/img/landing/hpc.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="items.summary =='स्वास्थ्य और चंगाई'" src="assets/img/landing/hnh.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="items.summary =='विवाह और परवरिश'" src="assets/img/landing/mnp.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
               <div  class="mt-4">
                 <h6 class="card-title">{{items.summary }}</h6>
                 <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
@@ -315,8 +313,8 @@
 
 
 <!--Frequently Asked Questions-->
-<div class="container-fluid" style="background-color: #FFFCF0; margin-top: -3em; ">
-  <div class="container" style="padding-left: 0px !important; padding-right: 0px !important;">
+<div class="container-fluid" style="background-color: #FFFCF0; margin-top: -4rem; ">
+  <div class="container">
     <h2 class="text-start space" style="color: #7F6A4F;">Frequently Asked Questions</h2>
     <div class="accordion" id="faq">
       <div class="accordion-item">
@@ -384,18 +382,18 @@
             <li class="glide__slide">
               <div class="container card text-center">
                 <div class="card-body testimony-background-quotes mx-auto">
-                  <p class="card-text my-3  mx-md-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
-                  <h6>Martin Smith</h6>
-                  <p class="card-text" style="text-transform: uppercase; margin-top: -10px;"><small class="text-muted">Architect</small></p>
+                  <p class="card-text my-3  mx-md-5">“The courses have opened my eyes to understand Biblical Counselling as a skilled form of Discipleship. It has deepened my ability to study scripture as I look not only at the ‘what’ but also the ‘how’ of application of scripture to my personal life.”</p>
+                  <h6>Physician</h6>
+                  <!-- <p class="card-text" style="text-transform: uppercase; margin-top: -10px;"><small class="text-muted">Architect</small></p> -->
                 </div>
               </div>
             </li>
             <li class="glide__slide">
               <div class="container card text-center">
                 <div class="card-body testimony-background-quotes mx-auto">
-                  <p class="card-text my-3  mx-md-5">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
-                  <h6>Emily Jones</h6>
-                  <p class="card-text" style="text-transform: uppercase; margin-top: -10px;"><small class="text-muted">Homemaker</small></p>
+                  <p class="card-text my-3  mx-md-5">“I initially hesitated to join this course due to ministry responsibilities, assuming I was fine as a counsellor myself. However, on the first day, the focus on my heart's true purpose revealed my flaws, especially self-righteousness.”</p>
+                  <h6>Pastor</h6>
+                  <!-- <p class="card-text" style="text-transform: uppercase; margin-top: -10px;"><small class="text-muted">Homemaker</small></p> -->
                 </div>
               </div>
             </li>
@@ -407,7 +405,7 @@
 
 <!--Contact Form-->
 <div class="container-fluid" style="background-color: #FFFCF0;">
-  <div class="container" style="padding-left: 0px !important; padding-right: 0px !important;">
+  <div class="container">
     <div class="row flex-sm-row-reverse" >
       <div class="col-md-6 mb-4">
         <div class="card shadow-none">

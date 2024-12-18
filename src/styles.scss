@@ -40,7 +40,8 @@ h5 {
 
 h6 {
   font-size: 16px !important;
-  line-height: 20px !important;
+  // line-height: 20px !important;
+  line-height: 1.5em !important;
   font-weight: 700 !important;
   text-transform: uppercase;
 }
@@ -91,6 +92,16 @@ p {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+}
+
+.layer {
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
 
 /* Importing Bootstrap SCSS file. */
