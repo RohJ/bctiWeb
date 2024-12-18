@@ -31,10 +31,10 @@
   <div class="container">
     <div class="row flex-sm-row-reverse" >
       <div class="col-md-6 mb-4">
-        <div class="ratio ratio-16x9">
-        <iframe preload="none" class="absolute inset-0 z-10 h-full w-full object-cover focus:outline-none" src="https://videocdn.cdnpk.net/videos/5bda907d-74ba-4de7-82b0-e512e44d88ce/horizontal/previews/videvo_watermarked/large.mp4" type="video/mp4">
-        </iframe>
-      </div>
+        <img src="assets/img/courses/bcti_logo_lg.webp" alt="" class="rounded img-fluid pb-3" style="margin-left: -12px; max-height: 300px !important;">
+        <!-- <div class="ratio ratio-16x9">
+          <iframe preload="none" class="absolute inset-0 z-10 h-full w-full object-cover focus:outline-none" src="https://videocdn.cdnpk.net/videos/5bda907d-74ba-4de7-82b0-e512e44d88ce/horizontal/previews/videvo_watermarked/large.mp4" type="video/mp4"></iframe>
+        </div> -->
       </div>
       <div class="col-md-6" >
         <h2 class="text-start space" style="color: #7F6A4F;">Our Mission</h2>
@@ -235,15 +235,16 @@
 <div class="container-fluid" style="background-color: #FFFCF0;">
   <div class="container">
     <h2 class="text-start space" style="color: #7F6A4F;">Upcoming Courses</h2>
+
     <!-- English Courses -->
-    <div>
+
     <h3 style="font-weight: 600 !important;">English Courses</h3>
     <!--Row Cols-->
-    <div class="row row-cols-1 row-cols-md-2 g-5">
-      <div *ngFor="let items of sortedArray; let i = index">
-        <div *ngIf="i < 2" class="row" style="align-items: center;">
-          <div class="col">
-            <div class="card" style="background-color: transparent; border: none;">
+    <div class="row space" style="align-items: center;">
+      <div *ngFor="let items of sortedArray; let i = index"  class="col-md-6">
+        <div >
+          <div>
+            <div *ngIf="i < 2" class="card" style="background-color: transparent; border: none; margin-top: 3rem;">
               <img *ngIf="items.summary =='Instruments in the Redeemers Hands'" src="assets/img/landing/irh_title.webp" class="card-img-top rounded" alt="...">
               <img *ngIf="items.summary =='How People Change'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
               <img *ngIf="items.summary =='Health and Healing'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
@@ -263,40 +264,34 @@
         </div>
       </div>
     </div>
-    <hr>
-  </div>
+    <hr class="space">
+
     <!-- CCEF Courses -->
     <h3 style="font-weight: 600 !important;">CCEF Courses</h3>
     <!--Row Cols-->
-    <div class="row row-cols-1 row-cols-md-2 g-5">
-      <div *ngFor="let items of sortedArrayCCEF; let j = index">
-        <div *ngIf="j < 2" class="row" style="align-items: center;">
-          <div class="col">
-            <div class="card" style="background-color: transparent; border: none;">
-              <img *ngIf="items.summary =='Dynamics of Biblical Change'" src="assets/img/ccef/ccef_dbc_1.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
-              <img *ngIf="items.summary =='Helping Relationships'" src="assets/img/ccef/ccef_hr_1.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+    <div class="row space" style="align-items: center;">
+      <div *ngFor="let item of sortedArrayCCEF; let l = index" class="col-md-6">
+            <div *ngIf="l < 2" class="card " style="background-color: transparent; border: none; margin-top: 3rem;">
+              <img *ngIf="item.summary =='Dynamics of Biblical Change'" src="assets/img/ccef/ccef_dbc_1.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
+              <img *ngIf="item.summary =='Helping Relationships'" src="assets/img/ccef/ccef_hr_1.webp" class="card-img-top img-fluid rounded mx-auto" alt="..." style="width: fit-content;">
               <div  class="mt-4">
-                <h6 class="card-title">{{items.summary }}</h6>
-                <h6 class="card-title">Starts: <span style="font-weight: 400;">{{items.sdate | date:'mediumDate'}}</span></h6>
-                <h6 class="card-title">Time: <span style="font-weight: 400;">{{ items.sdate | date:'shortTime' }}</span></h6>
-                <p style="white-space: pre-line">{{ items.description }}</p>
+                <h6 class="card-title">{{item.summary }}</h6>
+                <h6 class="card-title">Starts: <span style="font-weight: 400;">{{item.sdate | date:'mediumDate'}}</span></h6>
+                <h6 class="card-title">Time: <span style="font-weight: 400;">{{ item.sdate | date:'shortTime' }}</span></h6>
+                <p style="white-space: pre-line">{{ item.description }}</p>
               </div>
-              <a *ngIf="items.summary =='Dynamics of Biblical Change'" type="button" class="btn btn-success mt-3" [routerLink]="['/ccef-bcti']" style="font-size: medium; width: 200px;">Know More</a>
-              <a *ngIf="items.summary =='Helping Relationships'" type="button" class="btn btn-success mt-3" [routerLink]="['/ccef-bcti']" style="font-size: medium; width: 200px;">Know More</a>
+              <a *ngIf="item.summary =='Dynamics of Biblical Change'" type="button" class="btn btn-success mt-3" [routerLink]="['/ccef-bcti']" style="font-size: medium; width: 200px;">Know More</a>
+              <a *ngIf="item.summary =='Helping Relationships'" type="button" class="btn btn-success mt-3" [routerLink]="['/ccef-bcti']" style="font-size: medium; width: 200px;">Know More</a>
             </div>
-          </div>
-        </div>
       </div>
     </div>
-    <hr>
+    <hr class="space">
     <!-- Hindi Courses -->
     <h3 style="font-weight: 600 !important;">Hindi Courses</h3>
     <!--Row Cols-->
-    <div class="row row-cols-1 row-cols-md-2 g-5">
-      <div *ngFor="let items of sortedArrayHindi; let k = index">
-        <div *ngIf="k < 2" class="row" style="align-items: center;">
-          <div class="col">
-            <div class="card" style="background-color: transparent; border: none;">
+    <div class="row space" style="align-items: center;">
+      <div *ngFor="let items of sortedArrayHindi; let k = index" class="col-md-6">
+            <div *ngIf="k < 2" class="card" style="background-color: transparent; border: none; margin-top: 3rem;">
               <img *ngIf="items.summary =='परिवर्तन के उपकरण'" src="assets/img/landing/irh_title.webp" class="card-img-top rounded" alt="...">
               <img *ngIf="items.summary =='लोग कैसे बदलते है'" src="assets/img/landing/hpc.webp" class="card-img-top rounded" alt="...">
               <img *ngIf="items.summary =='स्वास्थ्य और चंगाई'" src="assets/img/landing/hnh.webp" class="card-img-top rounded" alt="...">
@@ -312,15 +307,15 @@
               <a *ngIf="items.summary =='स्वास्थ्य और चंगाई'" type="button" class="btn btn-success mt-3"[routerLink]="['/hnhhindi']" style="font-size: medium; width: 200px;">अधिक जानिए</a>
               <a *ngIf="items.summary =='विवाह और परवरिश'" type="button" class="btn btn-success mt-3" [routerLink]="['/mnphindi']" style="font-size: medium; width: 200px;">अधिक जानिए</a>
             </div>
-          </div>
-        </div>
       </div>
     </div>
+    <hr>
   </div>
 </div>
 
+
 <!--Frequently Asked Questions-->
-<div class="container-fluid" style="background-color: #FFFCF0; margin-top: -3em; padding-left: 0px !important; padding-right: 0px !important;">
+<div class="container-fluid" style="background-color: #FFFCF0; margin-top: -3em; ">
   <div class="container" style="padding-left: 0px !important; padding-right: 0px !important;">
     <h2 class="text-start space" style="color: #7F6A4F;">Frequently Asked Questions</h2>
     <div class="accordion" id="faq">

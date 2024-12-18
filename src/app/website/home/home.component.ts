@@ -118,15 +118,11 @@ export class HomeComponent implements OnInit, OnDestroy {
           if (this.startDate < this.todayDate) {
             // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
             delete this.createData.items[j];
-            this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.date, description: this.createData.items[j].description });
+            // this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.date, description: this.createData.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
-          }
-        } else if(this.createData.items[j].start.dateTime) {
-            this.startDate = Date.parse(this.createData.items[j].start.dateTime);
-            // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
-            if (this.startDate < this.todayDate) {
+          } else if (this.startDate > this.todayDate) {
             // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
-            delete this.createData.items[j];
+            // delete this.createData.items[j];
             this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.dateTime, description: this.createData.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
             }
@@ -184,21 +180,17 @@ export class HomeComponent implements OnInit, OnDestroy {
                 delete this.createDataCCEF.items[j];
         } } else if(this.createDataCCEF.items[j].status == 'cancelled') {
             delete this.createDataCCEF.items[j];
-        }else if(this.createDataCCEF.items[j].start.date) {
+        } else if(this.createDataCCEF.items[j].start.date) {
           this.startDate = Date.parse(this.createDataCCEF.items[j].start.date);
           // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
           if (this.startDate < this.todayDate) {
             // console.log('Filtered Data ' + this.createDataCCEF.items[j].summary + '  ' + this.createDataCCEF.items[j].start.date);
             delete this.createDataCCEF.items[j];
-            this.myArrayCCEF.push({ summary: this.createDataCCEF.items[j].summary, sdate: this.createDataCCEF.items[j].start.date, description: this.createDataCCEF.items[j].description });
+            // this.myArrayCCEF.push({ summary: this.createDataCCEF.items[j].summary, sdate: this.createDataCCEF.items[j].start.date, description: this.createDataCCEF.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
-          }
-        } else if(this.createDataCCEF.items[j].start.dateTime) {
-            this.startDate = Date.parse(this.createDataCCEF.items[j].start.dateTime);
-            // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
-            if (this.startDate < this.todayDate) {
-            // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
-            delete this.createData.items[j];
+          } else if (this.startDate > this.todayDate) {
+            console.log('Filtered Data ' + this.createDataCCEF.items[j].summary + '  ' + this.createDataCCEF.items[j].start.dateTime);
+            // delete this.createData.items[j];
             this.myArrayCCEF.push({ summary: this.createDataCCEF.items[j].summary, sdate: this.createDataCCEF.items[j].start.dateTime, description: this.createDataCCEF.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
             }
@@ -264,15 +256,11 @@ export class HomeComponent implements OnInit, OnDestroy {
           if (this.startDate < this.todayDate) {
             // console.log('Filtered Data ' + this.createDataHindi.items[j].summary + '  ' + this.createDataHindi.items[j].start.date);
             delete this.createDataHindi.items[j];
-            this.myArrayHindi.push({ summary: this.createDataHindi.items[j].summary, sdate: this.createDataHindi.items[j].start.date, description: this.createDataHindi.items[j].description });
+            // this.myArrayHindi.push({ summary: this.createDataHindi.items[j].summary, sdate: this.createDataHindi.items[j].start.date, description: this.createDataHindi.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
-          }
-        } else if(this.createDataHindi.items[j].start.dateTime) {
-            this.startDate = Date.parse(this.createDataHindi.items[j].start.dateTime);
-            // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
-            if (this.startDate < this.todayDate) {
+          } else if (this.startDate > this.todayDate) {
             // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
-            delete this.createDataHindi.items[j];
+            // delete this.createDataHindi.items[j];
             this.myArrayHindi.push({ summary: this.createDataHindi.items[j].summary, sdate: this.createDataHindi.items[j].start.dateTime, description: this.createDataHindi.items[j].description });
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
             }
