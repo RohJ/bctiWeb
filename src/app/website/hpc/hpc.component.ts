@@ -65,7 +65,6 @@ export class HpcComponent implements OnInit, OnDestroy {
       for (let j = 0; j < this.createData.items.length; j++) {
 
         if(this.createData.items[j].summary !== "How People Change") {
-
               delete this.createData.items[j];
         } else if(this.createData.items[j].status == 'cancelled') {
             delete this.createData.items[j];
@@ -75,8 +74,10 @@ export class HpcComponent implements OnInit, OnDestroy {
           if (this.startDate < this.todayDate) {
             // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
             delete this.createData.items[j];
-            this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.date, description: this.createData.items[j].description });
+
             // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
+          } else {
+            this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.date, description: this.createData.items[j].description });
           }
         }
         // if(this.createData.items[j].summary !== 'How People Change') {

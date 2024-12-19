@@ -19,7 +19,7 @@
       </div>
       <div class="col-md-6" >
         <h2 class="text-start space" style="color: #7F6A4F;">Anu's Story</h2>
-        <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p class="text-start">Anu is a homemaker with 4 children in Kerala. She was introduced to BCTI by her sister. Through the online courses conducted by BCTI, she experienced growth and transformation. This equipped her to navigate her marriage and parenting in a godly way as she matured in her understanding and faith.</p>
       </div>
   </div>
   </div>
@@ -40,8 +40,9 @@
             </div>
             <div class="col-md-6">
               <!-- <h2 class="text-start spacer" style="color: #7F6A4F;">English Courses</h2> -->
-              <p class="text-start">BCTI follows the Biblical Counseling model of the Christian Counseling and Educational Foundation (CCEF). We offer an 'Introduction to Biblical Counseling Certificate' after completing four modules: How People Change, Instruments in the Redeemer's Hands, Health and Healing, and Marriage and Parenting.</p>
-                <p>Courses are available via Zoom in and English.</p>
+              <p class="text-start">BCTI follows the Biblical Counseling model of the Christian Counseling and Educational Foundation (CCEF). We offer an 'Introduction to Biblical Counseling Certificate' after completing four modules:</p>
+               <ul> <li>How People Change</li><li>Instruments in the Redeemer's Hands</li><li>Health and Healing</li> <li>Marriage and Parenting</li></ul>
+                <p>Interactive Courses are available via Zoom in English.</p>
               <a type="button" class="btn text-white mt-3" [routerLink]="['/engcourses']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
             </div>
           </div>
@@ -58,8 +59,9 @@
             </div>
             <div class="col-md-6">
               <!-- <h2 class="text-start spacer" style="color: #7F6A4F;">CCEF-BCTI Courses</h2> -->
-              <p class="text-start">BCTI partners with the Christian Counseling & Educational Foundation (CCEF)* to provide biblical counselling courses in India at a discounted rate.</p>
-              <p class="text-start">These online courses provide a solid biblical foundation for understanding God, yourself, and others, making them invaluable for anyone involved in ministry or counselling.</p>
+              <p class="text-start">BCTI partners with the Christian Counseling & Educational Foundation (CCEF), Philadelphia, USA, (<a target="_blank" rel="noreferrer noopener" href="https://www.ccef.org/" >https://www.ccef.org/</a>) to provide biblical counselling courses in India at a discounted rate.</p>
+              <p class="text-start">These online courses provide a solid biblical foundation for understanding God, yourself, and others, making them invaluable for anyone involved in ministry or counselling. The following two courses are offered:</p>
+              <ul><li>Dynamics of Biblical Change</li><li>Helping Relationships</li></ul>
               <a type="button" class="btn text-white mt-3" [routerLink]="['/ccef-bcti']" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
             </div>
           </div>
@@ -72,13 +74,14 @@
       <h2 class="text-start space" style="color: #7F6A4F;">Hindi Courses</h2>
       <div class="col-md-6 spacer">
         <div class="ratio ratio-16x9">
-          <img src="https://placehold.co/640x360" alt="" class="rounded pb-3" style="margin-left: -12px;">
+          <img src="assets/img/landing/courses2.webp" alt="" class="rounded pb-3" style="margin-left: -12px;">
         </div>
       </div>
       <div class="col-md-6">
         <!-- <h2 class="text-start spacer" style="color: #7F6A4F;">Online Courses</h2> -->
-        <p class="text-start" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <p class="text-start" >Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="text-start" >बी सी टी आई, क्रिश्चियन काउंसलिंग एंड एजुकेशनल फाउंडेशन (सीसीईएफ) के बाइबिल परामर्श मॉडल का अनुसरण करता है। हम चार मॉड्यूल पूरा करने के बाद 'बाइबिल परामर्श प्रमाणपत्र का परिचय' प्रदान करते हैं</p>
+        <ul> <li>लोग कैसे बदलते है</li><li>परिवर्तन के उपकरण</li><li>स्वास्थ्य और चंगाई</li> <li>विवाह और परवरिश</li></ul>
+        <p>पाठ्यक्रम हिंदी में ज़ूम के माध्यम से उपलब्ध हैं।</p>
         <a type="button" class="btn text-white mt-3" href="#" style="background-color: #6CAB72; font-size: medium; width: 200px;">Know More</a>
       </div>
     </div>
@@ -249,69 +252,13 @@
 </div>
 
 <!--Contact Form-->
-<div class="container-fluid" style="background-color: #D2D8BE;">
+<!-- <div class="container-fluid" style="background-color: #D2D8BE;">
   <div class="container">
     <div class="row flex-sm-row-reverse" >
       <div class="col-md-6 mb-4">
         <div class="card shadow-none">
           <div class="card-body" >
-            <!-- <form [formGroup]="coursesForm" (ngSubmit)="onSubmit()">
-              <div class="form-group  mt-3">
-                <label>Full Name</label>
-                <input type="text" formControlName="fullname" class="form-control mt-3" [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"/>
-                <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                  <div *ngIf="f['fullname'].errors['required']">Name is required</div>
-              </div>
-              </div>
 
-              <div class="form-group  mt-3">
-                <label>Email</label>
-                <input type="text" formControlName="email" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
-                @if (submitted && f['email'].errors) {
-                <div class="invalid-feedback">
-                  @if (f['email'].errors['required']) {
-                  <div>Email is required</div>
-                  }
-              @if (f['email'].errors['email']) {
-                  <div>Email is invalid</div>
-                  }
-                </div>
-                }
-              </div>
-
-              <div class="form-group  mt-3">
-                <label>Mobile Number</label>
-                <input type="number" formControlName="phone" class="form-control  mt-3" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }"/>
-                @if (submitted && f['phone'].errors) {
-                <div class="invalid-feedback">
-                  @if (f['phone'].errors['required']) {
-                  <div>Mobile number is required</div>
-                  }
-              @if (f['phone'].errors['phone']) {
-                  <div>Mobile number is invalid</div>
-                  }
-                </div>
-                }
-              </div>
-
-              <div class="form-group  mt-3">
-                <label>Message</label>
-                <input type="text" formControlName="message" class="form-control  mt-3" style="height: 80px;" [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"/>
-                @if (submitted && f['message'].errors) {
-                <div class="invalid-feedback">
-                  @if (f['message'].errors['required']) {
-                  <div>Fullname is required</div>
-                  }
-                </div>
-                }
-              </div>
-
-
-              <div class="form-group my-3">
-                <button type="button" class="btn btn-secondary text-white mt-3" style="background-color: #6CAB72; font-size: medium; width: 200px;">Submit</button>
-                <button type="button" class="btn btn-dark text-white mt-3 ms-md-4"  (click)="onReset()" style="font-size: medium; width: 120px;">Reset</button>
-              </div>
-            </form> -->
 
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebNk_PuI0BE85ZZSzoBupFL6V7CyDzE98CO6ADbVY_UyYFJA/viewform?embedded=true" width="100%" height="700px" marginheight="0" marginwidth="0">Loading…</iframe>
 
@@ -323,4 +270,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
