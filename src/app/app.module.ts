@@ -27,6 +27,7 @@ import { HpchindiComponent } from './website/hpchindi/hpchindi.component';
 import { IrhhindiComponent } from './website/irhhindi/irhhindi.component';
 import { HnhhindiComponent } from './website/hnhhindi/hnhhindi.component';
 import { MnphindiComponent } from './website/mnphindi/mnphindi.component';
+import { ResourcesComponent } from './website/resources/resources.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MnphindiComponent } from './website/mnphindi/mnphindi.component';
     HpchindiComponent,
     IrhhindiComponent,
     HnhhindiComponent,
-    MnphindiComponent
+    MnphindiComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

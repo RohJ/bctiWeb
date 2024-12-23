@@ -18,6 +18,7 @@ import { HpchindiComponent } from './website/hpchindi/hpchindi.component';
 import { IrhhindiComponent } from './website/irhhindi/irhhindi.component';
 import { HnhhindiComponent } from './website/hnhhindi/hnhhindi.component';
 import { MnphindiComponent } from './website/mnphindi/mnphindi.component';
+import { ResourcesComponent } from './website/resources/resources.component';
 
 const routes: Routes = [
   { path: '',         component: HomeComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'irhhindi',         component: IrhhindiComponent },
   { path: 'hnhhindi',         component: HnhhindiComponent },
   { path: 'mnphindi',         component: MnphindiComponent },
+  { path: 'resources',         component: ResourcesComponent },
 ];
 
 @NgModule({
