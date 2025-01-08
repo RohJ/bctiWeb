@@ -73,7 +73,7 @@ export class HpcComponent implements OnInit, OnDestroy {
             //  console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
             if (this.startDate > this.todayDate) {
               // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
-              this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.date, description: this.createData.items[j].description });
+              this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.dateTime, description: this.createData.items[j].description });
             } else {
               // console.log('Older Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
               delete this.createData.items[j];
@@ -82,23 +82,13 @@ export class HpcComponent implements OnInit, OnDestroy {
         } else {
             delete this.createData.items[j];
         }
-        // if(this.createData.items[j].summary !== 'How People Change') {
-        //     delete this.createData.items[j];
-        //     this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.dateTime, description: this.createData.items[j].description });
-
-        // }
       }
-
-      // console.log(this.createData);
-      // console.log('Length - ' + this.createData.items.length);
 
       // ASC
       this.sortedArray = this.myArray.sort((a: any, b: any) => {
         return <any>new Date(a.sdate) - <any>new Date(b.sdate);
       });
-      // console.log(this.sortedArray);
 
-      // console.log(this.sortedArray);
     },
       error: (err) => {
       this.createData = JSON.parse(err.error).message;

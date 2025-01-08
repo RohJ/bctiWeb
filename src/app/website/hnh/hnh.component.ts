@@ -12,7 +12,7 @@ export class HnhComponent implements OnInit, OnDestroy {
   todayDate : number = Date.now();
   startDate : number = 0;
 
-  createDataHnhHindi:any = [];
+  createData:any = [];
   myArray:any = [];
   sortedArray:any =[];
 
@@ -56,68 +56,41 @@ export class HnhComponent implements OnInit, OnDestroy {
     this.userAccess.getEvents()
     .subscribe({
       next: (data) => {
-      this.createDataHnhHindi = data;
+      this.createData = data;
 
       //  console.log(this.createData);
       // console.log('Length - ' + this.createData.items.length);
 
-      for (let j = 0; j < this.createDataHnhHindi.items.length; j++) {
+      for (let j = 0; j < this.createData.items.length; j++) {
 
-        if(this.createDataHnhHindi.items[j].summary !== "स्वास्थ्य और चंगाई") {
-
-              delete this.createDataHnhHindi.items[j];
-        } else if(this.createDataHnhHindi.items[j].status == 'cancelled') {
-            delete this.createDataHnhHindi.items[j];
-        } else if(this.createDataHnhHindi.items[j].start.date) {
-          this.startDate = Date.parse(this.createDataHnhHindi.items[j].start.date);
-          // console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
-          if (this.startDate < this.todayDate) {
-            // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
-            delete this.createDataHnhHindi.items[j];
-            this.myArray.push({ summary: this.createDataHnhHindi.items[j].summary, sdate: this.createDataHnhHindi.items[j].start.date, description: this.createDataHnhHindi.items[j].description });
-            // console.log(this.createData.items[j].summary + '  ' + this.createData.items[j].start.date);
+        if(this.createData.items[j].summary == "Marriage and Parenting") {
+          if(this.createData.items[j].status == 'cancelled') {
+            // console.log('Cancelled Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+            delete this.createData.items[j];
+          } else if(this.createData.items[j].start.dateTime) {
+            this.startDate = Date.parse(this.createData.items[j].start.dateTime);
+            //  console.log(j + ' start date - ' + this.startDate + '  ' + this.createData.items[j].summary);
+            if (this.startDate > this.todayDate) {
+              // console.log('Filtered Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+              this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.dateTime, description: this.createData.items[j].description });
+            } else {
+              // console.log('Older Data ' + this.createData.items[j].summary + '  ' + this.createData.items[j].start.dateTime);
+              delete this.createData.items[j];
+              }
           }
+        } else {
+            delete this.createData.items[j];
         }
-        // if(this.createData.items[j].summary !== 'How People Change') {
-        //     delete this.createData.items[j];
-        //     this.myArray.push({ summary: this.createData.items[j].summary, sdate: this.createData.items[j].start.dateTime, description: this.createData.items[j].description });
-
-        // }
       }
 
-      // console.log(this.createData);
-      // console.log('Length - ' + this.createData.items.length);
-
-      let keyArr: any[] = Object.keys(this.createDataHnhHindi.items)
-      keyArr.forEach((key: any) => {
-        // console.log(this.createData.items[key].summary)
-        // push object with abbreviation, price and coin to array
-        if(this.createDataHnhHindi.items[key].start.dateTime){
-          this.myArray.push({ summary: this.createDataHnhHindi.items[key].summary, sdate: this.createDataHnhHindi.items[key].start.dateTime, description: this.createDataHnhHindi.items[key].description  });
-          // console.log(this.myArray);
-        } else if(this.createDataHnhHindi.items[key].start.date){
-          this.myArray.push({ summary: this.createDataHnhHindi.items[key].summary, sdate: this.createDataHnhHindi.items[key].start.date, description: this.createDataHnhHindi.items[key].description  });
-          // console.log(this.myArray);
-        }
-      });
       // ASC
       this.sortedArray = this.myArray.sort((a: any, b: any) => {
         return <any>new Date(a.sdate) - <any>new Date(b.sdate);
       });
       // console.log(this.sortedArray);
-
-       for (let i = 0; i < this.sortedArray.length; i++) {
-        // if(this.sortedArray[i].summary !== 'How People Change') {
-        //   delete this.sortedArray[i];
-        // }
-        console.log(this.sortedArray[i].summary);
-
-        //console.log(this.createData.items[i].summary + '  ' + this.createData.items[i].start.date);
-      }
-      console.log(this.sortedArray);
     },
       error: (err) => {
-      this.createDataHnhHindi = JSON.parse(err.error).message;
+      this.createData = JSON.parse(err.error).message;
       console.log(JSON.parse(err.error).message);
       }
     });
